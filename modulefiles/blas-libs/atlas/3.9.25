@@ -1,0 +1,35 @@
+#%Module1.0
+#####################################################################
+##
+## atlas 3.9.25 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Atlas 3.9.25 compiler to your environment  "
+}
+
+module-whatis "
+(Category_______) blas-libs
+(Name___________) ATLAS
+(Version________) 3.9.25
+(Description_Fr_) Le projet ATLAS (Automatically Tuned Linear Algebra Software) est un développement en plein essort se concentrant à appliquer des 
+techniques empiriques dans le but de fournir une performance portable. Pour le moment, la librairie fournit des interfaces en C et en Fortran77 à 
+une implémentation BLAS efficace, en plus de fournir quelques routines de Lapack.
+(Description_En_) The ATLAS (Automatically Tuned Linear Algebra Software) project is an ongoing research effort focusing on applying empirical 
+techniques in order to provide portable performance. At present, it provides C and Fortran77 interfaces to a portably efficient BLAS implementation, 
+as well as a few routines from LAPACK.
+(Website________) http://math-atlas.sourceforge.net/
+(Authorship_____) ATLAS team
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) Cette version compilée de ATLAS ne fournit pas toutes les routines présentes dans Lapack.
+(Notes_En_______) This compiled version of ATLAS does not provide the entire Lapack library routines.
+"
+
+conflict           blas-libs
+setenv             SYNOPSYS          /software/atlas-3.9.25
+setenv             ATLAS             $env(SYNOPSYS)
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       CXX_INCLUDE_PATH  $env(SYNOPSYS)/include

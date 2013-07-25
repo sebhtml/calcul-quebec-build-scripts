@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## Perf for kernel 2.6.32.40
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds Perf (for kernel 2.6.32.40) to your environment	"
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) Perf
+(Version________) 2.6.32.40 (Linux kernel)
+(Description_Fr_) Profilage sous Linux avec des compteurs de performance
+(Description_En_) Linux profiling with performance counters
+(Website________) https://perf.wiki.kernel.org/
+(Authorship_____) Perf subsystem developpers
+(Compiler_______) GCC 4.4.2
+(Flags__________) Compile flag: -static
+(Dependencies___) Aucune (statique); None (static)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           tools/perf
+setenv             SYNOPSYS          /software/tools/perf/2.6.32.40
+prepend-path       PATH              $env(SYNOPSYS)/bin

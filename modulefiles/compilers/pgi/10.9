@@ -1,0 +1,36 @@
+#%Module1.0
+#####################################################################
+##
+## PGI Workstation 10.9 
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the PGI Workstation compiler suite to your environment."
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) PGI Workstation
+(Version________) 10.9
+(Description_Fr_) La suite de compilateurs PGI.
+(Description_En_) PGI Workstation is PGI's single-user scientific and engineering compilers and tools product.
+(Website________) http://www.pgroup.com/products/pgiworkstation.htm
+(Authorship_____) STMicroelectronics, Inc.
+(Compiler_______)
+(Flags__________)
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           compilers
+setenv             SYNOPSYS          /software/pgi
+setenv             CC                pgcc
+setenv             CXX               pgcpp
+setenv             F77               pgf77
+setenv             FC                pgf90
+setenv             PGI               $env(SYNOPSYS)
+setenv             LM_LICENSE_FILE   $env(SYNOPSYS)/license.dat
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/linux86-64/10.9/lib
+prepend-path       PATH              $env(SYNOPSYS)/linux86-64/10.9/bin
+prepend-path       MANPATH           $env(SYNOPSYS)/linux86-64/10.9/man

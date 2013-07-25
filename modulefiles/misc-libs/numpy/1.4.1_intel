@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## NumPy 1.4.1
+##
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds NumPy 1.4.1 to your Python environment."
+}
+
+module-whatis "
+        (Category_______) misc-libs
+        (Name___________) NumPy
+        (Version________) 1.4.1
+        (Description_Fr_) NumPy est le paquet fondamental pour le calcul scientifique avec Python.
+        (Description_En_) NumPy is the fundamental package needed for scientific computing with Python. 
+        (Website________) http://numpy.scipy.org/
+        (Authorship_____) Enthought Inc., SciPy Developers
+        (Compiler_______) icc 11.1.059
+        (Flags__________) -O3 -xHost -fPIC -fp-model precise
+        (Dependencies___) Python 2.6.4, Intel C Compiler 11.1.059, Intel MKL 10.2.2.025
+        (Notes_Fr_______) Cette version de NumPy utilise Intel MKL au lieu d'ATLAS.
+        (Notes_En_______) This version of NumPy uses Intel MKL instead of ATLAS.
+"
+
+prereq                            apps/python-2.6.4
+prereq                            compilers/intel/11.1.059
+prereq                            blas-libs/mkl/10.2.2.025
+setenv          SYNOPSYS          /software/misc-libs/numpy/1.4.1_intel
+prepend-path    PYTHONPATH        $env(SYNOPSYS)/lib/python2.6/site-packages

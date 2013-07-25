@@ -1,0 +1,39 @@
+#%Module1.0
+#####################################################################
+##
+## gcc-4.4.2 + g77
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds gcc-4.4.2 + g77 compilers to your environment  "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) GCC & G77
+(Version________) 4.4.2
+(Description_Fr_) Le 'GNU Compiler Collection' inclut des outils pour le C, C++, Objective-C, Fortran, Java et Ada, en 
+plus de fournir des librairies pour ces langages (libstdc++, libgcj,...).
+(Description_En_) The 'GNU Compiler Collection' includes front ends for C, C++, Objective-C, Fortran, Java, and Ada, as 
+well as libraries for these languages (libstdc++, libgcj,...).
+(Website________) http://gcc.gnu.org/
+(Authorship_____) GNU
+(Compiler_______) gcc
+(Flags__________) CFLAGS='-O3 -m64 -mtune=core2 -march=core2 -fprefetch-loop-arrays -funroll-all-loops' 
+../gcc-4.4.2/configure --prefix=/software/gcc-4.4.2 --enable-languages=c,c++,fortran --enable-shared 
+--with-system-zlib --enable-threads=posix --enable-nls --with-tune=core2 --enable-static 
+--with-gmp=/software/gmp-4.3.1_gcc --with-mpfr=/software/mpfr-2.4.1_gcc --disable-multilib --with-arch=core2
+(Dependencies___) GNU MPFR (mpfr), GNU MP Bignum Library (gmp)
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict compilers
+module load misc-libs/mpfr/4.3.1_gcc
+module load misc-libs/gmp/4.3.1_gcc
+prepend-path       LD_LIBRARY_PATH    /software/gcc-4.4.2/lib64:/software/gcc-4.4.2/lib:/software/g77_gcc-3.4.6/lib64:/software/g77_gcc-3.4.6/lib:/software/base-gcc/lib:/software/base-gcc/lib64
+prepend-path       C_INCLUDE_PATH     /software/base-gcc/include
+prepend-path       CPLUS_INCLUDE_PATH /software/base-gcc/include
+prepend-path       PATH               /software/gcc-4.4.2/bin:/software/base-gcc/bin:/software/g77_gcc-3.4.6/bin
+prepend-path       MANPATH            /software/gcc-4.4.2/man:/software/base-gcc/man
+

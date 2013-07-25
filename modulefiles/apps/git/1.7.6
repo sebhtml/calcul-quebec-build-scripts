@@ -1,0 +1,34 @@
+#%Module1.0
+#####################################################################
+##
+## Git 1.7.6
+## 
+##
+proc ModulesHelp { } {
+    puts stderr "\tAdds Git 1.7.6 to your environment."
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) git
+(Version________) 1.7.6
+(Description_Fr_) Git est un logiciel gratuit et libre de gestion de versions décentralié  (SCM).
+(Description_En_) Git is a free & open source, distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+(Website________) http://git-scm.com/
+(Authorship_____) See: http://git-scm.com/about
+(Compiler_______) GCC 4.1.2 (system default)
+(Flags__________)
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+setenv             SYNOPSYS          /software/apps/git/1.7.6
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man
+prepend-path       PYTHONPATH        $env(SYNOPSYS)/lib/python2.4/site-packages
+prepend-path       PERL5LIB          $env(SYNOPSYS)/lib/perl5/site_perl/5.8.8
+prepend-path       PERL5LIB          $env(SYNOPSYS)/lib/perl5/site_perl
+prepend-path       PERL5LIB          $env(SYNOPSYS)/lib64/perl5/site_perl/5.8.8
+prepend-path       PERL5LIB          $env(SYNOPSYS)/lib64/perl5/site_perl
+prepend-path       PERL5LIB          $env(SYNOPSYS)/lib64/perl5/5.8.8

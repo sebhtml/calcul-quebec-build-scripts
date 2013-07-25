@@ -1,0 +1,31 @@
+#%Module1.0
+##
+## Python 2.7.3
+##
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Python 2.7.3 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Python
+(Version________) 2.7.3
+(Description_Fr_) Python est un language de programmation qui permet une integration rapide et efficace avec vos systemes.
+(Description_En_) Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+(Website________) http://www.python.org/
+(Authorship_____) Python Software Foundation
+(Compiler_______) GCC 4.6.1
+(Flags__________) 
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict apps/python
+
+set         	synopsys        /software/apps/python/2.7.3
+prepend-path   	PATH          	$synopsys/bin
+prepend-path   	LD_LIBRARY_PATH $synopsys/lib
+prepend-path   	C_INCLUDE_PATH	$synopsys/include
+prepend-path   	MANPATH       	$synopsys/share/man

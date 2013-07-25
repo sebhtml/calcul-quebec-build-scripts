@@ -1,0 +1,38 @@
+#%Module1.0
+#####################################################################
+##
+## FFTW 2.1.5 (GCC)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds FFTW 2.1.5 (GCC) to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) FFTW
+(Version________) 2.1.5
+(Description_Fr_) Bibliothèque de routines C pour les transformées de Fourier
+                  discrètes (DFT)
+(Description_En_) C subroutine library for computing the discrete Fourier
+                  transform (DFT)
+(Website________) http://www.fftw.org/
+(Authorship_____) Matteo Frigo and Steven G. Johnson, MIT
+(Compiler_______) GCC 4.4.2
+(Flags__________) CFLAGS=-march=core2 -O3 -ffast-math
+                  Configure flags:
+                  --enable-shared --enable-type-prefix --enable-vec-recurse
+                  --enable-fortran --enable-mpi --enable-threads
+                  --without-openmp
+(Dependencies___) GCC 4.4.2, OpenMPI 1.4.3
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           misc-libs/fftw
+prereq mpi/openmpi
+setenv             SYNOPSYS          /software/misc-libs/fftw/2.1.5_gcc_r1
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       FPATH    $env(SYNOPSYS)/include
+prepend-path       INFOPATH          $env(SYNOPSYS)/info

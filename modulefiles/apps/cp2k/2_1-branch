@@ -1,0 +1,27 @@
+#%Module1.0
+#####################################################################
+##
+## CP2K version 2_1-branch application.
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the intel CP2K 2_1-branch application to your environment."
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) CP2K
+(Version________) 2_1-branch
+(Description_Fr_) Application CP2K avec la librarie Intel MKL.
+(Description_En_) CP2K application linked with the Intel MKL library.
+(Website________) http://cp2k.berlios.de/
+(Authorship_____) Juerg Hutter & Joost VandeVondele
+(Compiler_______)
+(Flags__________)
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+prereq             blas-libs/mkl/10.2.2.025
+prepend-path       PATH                      /software/apps/cp2k/2_1-branch/bin

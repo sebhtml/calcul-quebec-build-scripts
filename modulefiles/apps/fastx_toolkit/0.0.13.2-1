@@ -1,0 +1,28 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds fastx_toolkit 0.0.13.2-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) fastx_toolkit"
+module-whatis "(Version________) 0.0.13.2"
+module-whatis "(Description_Fr_) FASTX Toolkit est une suite d'outils pour le traitement des fichiers fastq et fasta."
+module-whatis "(Description_En_) The FASTX-Toolkit is a collection of command line tools for Short-Reads FASTA or FASTQ files preprocessing."
+module-whatis "(Website________) http://hannonlab.cshl.edu/fastx_toolkit/"
+module-whatis "(Authorship_____) Assaf Gordon"
+module-whatis "(Compiler_______) /usr/bin/gcc"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+module load misc-libs/libgtextutils/0.6.1-1
+
+set                synopsys          /software/apps/fastx_toolkit/0.0.13.2-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

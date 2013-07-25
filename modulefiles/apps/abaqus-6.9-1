@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## Abaqus 6.9-1
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Abaqus 6.9-1 to your environment "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Abaqus
+(Version________) 6.9-1
+(Description_Fr_) Abaqus est une suite logicielle pour l'analyse par éléments finis.
+(Description_En_) Abaqus is a software bundle for the finite element analysis.
+(Website________) http://www.simulia.com/
+(Authorship_____) SIMULIA
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+set		SYNOPSYS          	/software/apps/Abaqus/6.9-1
+prepend-path 	PATH		   	$SYNOPSYS/exec
+prepend-path 	LD_LIBRARY_PATH		$SYNOPSYS/exec/lbr
+set             mpiroot         	$SYNOPSYS/External/mpi/hpmpi-2.2.5.1
+setenv          MPI_ROOT        	$mpiroot
+prepend-path    PATH            	$mpiroot/bin
+prepend-path    MANPATH         	$mpiroot/share/man

@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## libpng 1.4.0 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the libpng 1.4.0 library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) libpng
+(Version________) 1.4.0
+(Description_Fr_) libpng est la librairie PNG de référence officielle.
+(Description_En_) libpng is the official PNG reference library.
+(Website________) http://www.libpng.org/pub/png/libpng.html
+(Authorship_____) Guy Eric Schalnat, Andreas Dilger, Glenn Randers-Pehrson & al
+(Compiler_______)
+(Flags__________)
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+setenv             SYNOPSYS              /software/misc-libs/libpng/1.4.0
+prepend-path       LD_LIBRARY_PATH       $env(SYNOPSYS)/lib
+prepend-path       PATH                  $env(SYNOPSYS)/bin
+prepend-path       C_INCLUDE_PATH        $env(SYNOPSYS)/include
+prepend-path       CPLUS_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       PKG_CONFIG_PATH       $env(SYNOPSYS)/lib/pkgconfig
+prepend-path       MAN_PATH              $env(SYNOPSYS)/share/man

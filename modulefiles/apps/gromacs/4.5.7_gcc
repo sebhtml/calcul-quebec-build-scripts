@@ -1,0 +1,39 @@
+#%Module1.0
+#####################################################################
+##
+## GROMACS 4.5.7 (GCC)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the GROMACS program and tools to your environment
+"
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) GROMACS"
+module-whatis "(Version________) 4.5.7"
+module-whatis "(Description_Fr_) GROMACS est une suite d’outils versatiles pour la dynamique"
+module-whatis "                  moléculaire"
+module-whatis "(Description_En_) GROMACS is a versatile package to perform molecular dynamics"
+module-whatis "(Website________) http://www.gromacs.org/"
+module-whatis "(Authorship_____) Originally University of Groningen; now various contributors"
+module-whatis "(Compiler_______) GCC 4.7.2"
+module-whatis "(Flags__________) CFLAGS=-march=core2 -O3 -ffast-math"
+module-whatis "                  Configure flags:"
+module-whatis "                  --with-fft=fftw3 --without-x --enable-shared --enable-mpi"
+module-whatis "(Dependencies___) GCC 4.7.2, OpenMPI 1.6.3, FFTW 3.3.3"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+conflict           apps/gromacs
+prereq compilers/gcc/4.7.2
+prereq mpi/openmpi/1.6.3_gcc
+prereq misc-libs/fftw/3.3.3_gcc
+
+set                SYNOPSYS          /software/apps/gromacs/4.5.7_gcc
+prepend-path       PATH              $SYNOPSYS/bin
+prepend-path       LD_LIBRARY_PATH   $SYNOPSYS/lib
+prepend-path       C_INCLUDE_PATH    $SYNOPSYS/include
+prepend-path       MANPATH           $SYNOPSYS/share/man
+prepend-path       PKG_CONFIG_PATH   $SYNOPSYS/lib/pkgconfig
+

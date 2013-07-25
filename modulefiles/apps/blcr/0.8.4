@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## BLCR (Berkeley Lab Checkpoint/Restart) 0.8.4
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the Berkeley Lab Checkpoint/Restart (BLCR) checkpointing application to your environment"
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) BLCR
+(Version________) 0.8.4
+(Description_Fr_) Application de checkpointing transparent.
+(Description_En_) Transparent checkpointing application.
+(Website________) https://ftg.lbl.gov/CheckpointRestart/CheckpointRestart.shtml
+(Authorship_____) Future Tehcnologies Group
+(Compiler_______) gcc 4.1.2 20080704 (Red Hat 4.1.2-46) (latest stock CentOS version)
+(Flags__________)
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+set                SYNOPSYS          /software/apps/blcr/0.8.4
+
+prepend-path       LD_LIBRARY_PATH   $SYNOPSYS/lib
+prepend-path       LIBRARY_PATH      $SYNOPSYS/lib
+prepend-path       PATH              $SYNOPSYS/bin
+prepend-path       MANPATH           $SYNOPSYS/man

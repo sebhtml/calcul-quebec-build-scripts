@@ -1,0 +1,34 @@
+#%Module1.0
+#####################################################################
+##
+## sun studio 12.1
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds sun studio 12.1 to your environment  "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Sun Studio
+(Version________) 12.1
+(Description_Fr_) Oracle Solaris Studio, une platforme avancée de développement en C, C++ et Fortran.
+(Description_En_) Oracle Solaris Studio, an advanced C, C++ and Fortran development platform.
+(Website________) http://developers.sun.com/sunstudio/
+(Authorship_____) Oracle
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict           compilers
+setenv             SYNOPSYS		/software/sunstudio12.1
+setenv             CC                cc
+setenv             CXX               CC
+setenv             FC                f90
+prepend-path       LD_LIBRARY_PATH	$env(SYNOPSYS)/rtlibs/amd64
+prepend-path       PATH			$env(SYNOPSYS)/bin
+prepend-path	   MANPATH		$env(SYNOPSYS)/man
+

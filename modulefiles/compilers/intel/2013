@@ -1,0 +1,37 @@
+#%Module1.0
+#####################################################################
+##
+## Intel compilers 
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the Intel 2013 compilers to your environment."
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Intel C/C++/Fortran Compilers (2013)
+(Version________) 2013
+(Description_Fr_) Le suite de compilateurs d'Intel.
+(Description_En_) The Intel Compiler Suite.
+(Website________) http://software.intel.com/en-us/intel-compilers/
+(Authorship_____) Intel
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict           compilers
+set                synopsys           /software/intel
+setenv             CC                 icc -i-dynamic
+setenv             CXX                icpc -i-dynamic
+setenv             LD                 xild
+setenv             AR                 xiar
+setenv             F77                ifort -i-dynamic
+setenv             FC                 ifort -i-dynamic
+setenv             INTEL_LICENSE_FILE 28518@10.225.3.14
+prepend-path       LD_LIBRARY_PATH    $synopsys/composer_xe_2013/lib/intel64
+prepend-path       PATH               $synopsys/composer_xe_2013/bin
+prepend-path       MANPATH            $synopsys/man/en_US

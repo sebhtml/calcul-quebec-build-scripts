@@ -1,0 +1,34 @@
+#%Module1.0
+
+#####################################################################
+##
+## Lua interpreter 5.1.4.5
+## 
+##
+
+proc ModulesHelp { } {
+        puts stderr "\tAdds the lua interpreter to your environment  "
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) lua"
+module-whatis "(Version________) 5.1.4.5"
+module-whatis "(Description_Fr_) Interpréteur lua"
+module-whatis "(Description_En_) The lua interpreter."
+module-whatis "(Website________) http://www.lua.org"
+module-whatis "(Authorship_____) Lua"
+module-whatis "(Compiler_______)"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+conflict lua
+
+set                SYNOPSYS          /software/apps/lua/5.1.4.5
+prepend-path       LD_LIBRARY_PATH   $SYNOPSYS/lib
+prepend-path       PATH              $SYNOPSYS/bin
+prepend-path       MANPATH           $SYNOPSYS/man
+prepend-path       LUA_PATH          $SYNOPSYS/share/lua/5.1/?.lua
+prepend-path       LUA_CPATH         $SYNOPSYS/lib/lua/5.1/?.so
+

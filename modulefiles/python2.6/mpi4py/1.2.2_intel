@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## MPI4Py
+## 
+##
+proc ModulesHelp { } {
+    puts stderr "\tAdds MPI4Py to your Python environment."
+}
+
+module-whatis "
+(Category_______) python2.6
+(Name___________) mpi4py
+(Version________) 1.2.2_intel
+(Description_Fr_) MPI pour Python fournit des liaisons pour le standard Message Passing Interface (MPI) au langage de programmation Python afin de permettre l’exploitation de processeurs multiples.
+(Description_En_) MPI for Python provides bindings of the Message Passing Interface (MPI) standard for the Python programming language, allowing any Python program to exploit multiple processors.
+(Website________) http://mpi4py.scipy.org/
+(Authorship_____) Lisandro Dalcin
+(Compiler_______) icc 11.1.059
+(Flags__________)
+(Dependencies___) apps/python/2.6.4 compilers/intel mpi/openmpi/1.4.3_intel
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+prereq                               apps/python-2.6.4
+prereq                               compilers/intel
+prereq                               mpi/openmpi/1.4.3_intel
+setenv             SYNOPSYS          /software/python2.6/mpi4py/1.2.2_intel
+prepend-path       PYTHONPATH        $env(SYNOPSYS)/lib/python2.6/site-packages
+

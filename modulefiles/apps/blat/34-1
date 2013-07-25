@@ -1,0 +1,27 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds blat 34-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) blat"
+module-whatis "(Version________) 34"
+module-whatis "(Description_Fr_) Aligneur similaire à Blast"
+module-whatis "(Description_En_) Blast-Like Alignment Tool"
+module-whatis "(Website________) http://users.soe.ucsc.edu/~kent/src/"
+module-whatis "(Authorship_____) W. James Kent"
+module-whatis "(Compiler_______) /usr/bin/gcc"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set                synopsys          /software/apps/blat/34-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       PATH              $synopsys/
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

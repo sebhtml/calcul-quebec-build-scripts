@@ -1,0 +1,43 @@
+#%Module1.0
+#####################################################################
+##
+## gcc-4.6.1
+##
+##
+proc ModulesHelp { } {
+  puts stderr "\tAdds gcc-4.6.1 compiler to your environment "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) GCC
+(Version________) 4.6.1
+(Description_Fr_) Le 'GNU Compiler Collection' inclut des outils pour le C, C++, Fortran et Go en
+plus de fournir des librairies pour ces langages.
+(Description_En_) The 'GNU Compiler Collection' includes front ends for C, C++, Fortran and Go as
+well as libraries for these languages.
+(Website________) http://gcc.gnu.org/
+(Authorship_____) GNU
+(Compiler_______) gcc
+(Flags__________)  ./configure --prefix=/software/gcc-4.6.1 --with-pkgversion='CLUMEQ 4.6.1-1-colosse' --with-bugurl=https://www.clumeq.ca/wiki/index.php/Support --enable-languages=c,c++,fortran,go --enable-shared --enable-static --enable-threads=posix --with-gmp=/software/gmp-5.0.2_gcc/ --with-mpfr=/software/mpfr-3.0.1_gcc/ --with-mpc=/software/mpc-0.9_gcc/ --with-system-zlib --with-arch=native --disable-multilib 
+(Dependencies___) GNU MP Bignum Library (gmp), GNU MPFR (mpfr), Multiple Precision Complex Library (mpc)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict compilers
+setenv       SYNOPSYS           /software/compilers/gcc/4.6.1
+setenv       SYNOPSYS_GMP       /software/misc-libs/gmp/5.0.2
+setenv       SYNOPSYS_MPFR      /software/misc-libs/mpfr/3.0.1
+setenv       SYNOPSYS_MPC       /software/misc-libs/mpc/0.9
+setenv 	     CC                 $env(SYNOPSYS)/bin/gcc
+setenv 	     CXX                 $env(SYNOPSYS)/bin/g++
+prepend-path LD_LIBRARY_PATH    $env(SYNOPSYS)/lib64:$env(SYNOPSYS)/lib:$env(SYNOPSYS_GMP)/lib:$env(SYNOPSYS_MPFR)/lib:$env(SYNOPSYS_MPC)/lib
+prepend-path C_INCLUDE_PATH     $env(SYNOPSYS)/include:$env(SYNOPSYS_GMP)/include:$env(SYNOPSYS_MPFR)/include:$env(SYNOPSYS_MPC)/include
+prepend-path CXX_INCLUDE_PATH   $env(SYNOPSYS)/include/c++/4.6.1
+prepend-path CPP_INCLUDE_PATH   $env(SYNOPSYS)/include/c++/4.6.1
+prepend-path CPLUS_INCLUDE_PATH $env(SYNOPSYS)/include/c++/4.6.1
+prepend-path PATH               $env(SYNOPSYS)/bin
+prepend-path MANPATH            $env(SYNOPSYS)/share/man
+prepend-path INFOPATH           $env(SYNOPSYS)/share/info:$env(SYNOPSYS_GMP)/share/info:$env(SYNOPSYS_MPFR)/share/info:$env(SYNOPSYS_MPC)/share/info
+

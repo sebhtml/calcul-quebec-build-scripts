@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## Octave 3.2.4 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Octave 3.2.4 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Octave
+(Version________) 3.2.4
+(Description_Fr_) GNU Octave est une langage de haut niveau, dont l'objectif principal est le calcul numérique.
+(Description_En_) GNU Octave is a high-level language, primarily intended for numerical computations.
+(Website________) http://www.gnu.org/software/octave/
+(Authorship_____) GNU, John W. Eaton & al
+(Compiler_______) gcc 4.4.2
+(Flags__________) 
+(Dependencies___) Compilateur gcc 4.4.2
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+prereq compilers/gcc/4.4.2+g77
+
+setenv             SYNOPSYS          /software/apps/octave-3.2.4
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

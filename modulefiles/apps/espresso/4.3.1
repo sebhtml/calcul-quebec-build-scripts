@@ -1,0 +1,33 @@
+#%Module1.0
+#####################################################################
+##
+## Quantum Espresso + GIPAW - 4.3.1
+## 
+##
+proc ModulesHelp { } {
+	    puts stderr "\tAdds the Quantum Espresso to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Quantum Espresso
+(Version________) 4.3.1
+(Description_Fr_) 
+(Description_En_) An integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials.
+(Website________) http://www.quantum-espresso.org/
+(Authorship_____) 
+(Compiler_______) Intel 12.0.4
+(Flags__________) 
+(Dependencies___) compilers/intel/12.0.4 blas-libs/mkl/10.3.4 mpi/openmpi/1.4.5_intel misc-libs/fftw/3.3.2_intel
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+prereq compilers/intel/12.0.4
+prereq mpi/openmpi/1.4.5_intel
+prereq blas-libs/mkl/10.3.4
+prereq misc-libs/fftw/3.3.2_intel
+
+set synopsys /software/apps/espresso/4.3.1
+
+prepend-path PATH $synopsys/bin

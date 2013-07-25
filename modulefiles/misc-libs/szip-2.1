@@ -1,0 +1,29 @@
+#%Module1.0
+#####################################################################
+##
+## szip lib 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the szip library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) szip
+(Version________) 2.1
+(Description_Fr_) Szip est un programme d'usage général pour effectuer des compressions sans pertes.
+(Description_En_) Szip is a freeware portable general purpose lossless compression program.
+(Website________) http://www.compressconsult.com/szip/
+(Authorship_____) Michael Schindler
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/misc-libs/szip-2.1
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       LD_RUN_PATH       $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include

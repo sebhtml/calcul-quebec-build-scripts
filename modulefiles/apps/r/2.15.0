@@ -1,0 +1,42 @@
+#%Module1.0
+proc ModulesHelp { } {
+    puts stderr "\tAdds R 2.15.0 to your environment"
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) R"
+module-whatis "(Version________) 2.15.0"
+module-whatis "(Description_Fr_) Environnement de développement et langage"
+module-whatis "              	statistiques R"
+module-whatis "(Description_En_) R language and development environment for"
+module-whatis "              	statistics"
+module-whatis "(Website________) http://www.r-project.org/"
+module-whatis "(Authorship_____) The R Foundation for Statistical Computing"
+module-whatis "(Compiler_______) Intel 12.0.4"
+module-whatis "(Flags__________) -O3 -xHOST -ipo --enable-R-shlib --without-x"
+module-whatis "              	--with-blas="
+module-whatis "                	-L MKL -Wl,--start-group -lmkl_intel_lp64"
+module-whatis "                	-lmkl_intel_thread -lmkl_lapack -lmkl_core"
+module-whatis "                	-Wl,--end-group -openmp -lpthread"
+module-whatis "              	--with-lapack"
+module-whatis "(Dependencies___) Intel Compilers 12.0.4"
+module-whatis "              	Intel MKL 10.3.4"
+module-whatis "              	Java Development Kit (JDK) 1.6.0"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+conflict       apps/r
+conflict       apps/r-2.10.1
+prereq         compilers/intel/12.0.4
+prereq         blas-libs/mkl/10.3.4
+prereq         java/jdk1.6.0
+set            synopsys         /software/apps/r/2.15.0
+set            rhome            $synopsys/lib64/R
+prepend-path   PATH             $synopsys/bin
+prepend-path   MANPATH          $synopsys/share/man
+prepend-path   LD_LIBRARY_PATH  $synopsys/lib64
+prepend-path   PKG_CONFIG_PATH  $synopsys/lib64/pkgconfig
+prepend-path   C_INCLUDE_PATH   $synopsys/include
+setenv         R_HOME           $rhome
+prepend-path   LD_LIBRARY_PATH  $rhome/lib
+prepend-path   C_INCLUDE_PATH   $rhome/include

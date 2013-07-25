@@ -1,0 +1,25 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds bwa/0.7.3a-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps "
+module-whatis "(Name___________) bwa"
+module-whatis "(Version________) 0.7.3a"
+module-whatis "(Description_Fr_) Aligneur de séquences d'ADN utilisant la transformation Burrows-Wheeler"
+module-whatis "(Description_En_) DNA sequence aligner that uses the Burrows-Wheeler transformation"
+module-whatis "(Website________) http://bio-bwa.sourceforge.net/"
+module-whatis "(Authorship_____) Heng Li"
+module-whatis "(Compiler_______) gcc"
+module-whatis "(Flags__________) none"
+module-whatis "(Dependencies___) none"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set                synopsys          /software/apps/bwa/0.7.3a-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

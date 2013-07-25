@@ -1,0 +1,43 @@
+#%Module1.0
+#####################################################################
+##
+## gcc-4.7.2
+##
+##
+proc ModulesHelp { } {
+  puts stderr "\tAdds gcc-4.7.2 compiler to your environment "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) GCC
+(Version________) 4.7.2
+(Description_Fr_) Le 'GNU Compiler Collection' inclut des outils pour le C, C++, Fortran et Go en
+plus de fournir des librairies pour ces langages.
+(Description_En_) The 'GNU Compiler Collection' includes front ends for C, C++, Fortran and Go as
+well as libraries for these languages.
+(Website________) http://gcc.gnu.org/
+(Authorship_____) GNU
+(Compiler_______) gcc
+(Flags__________) ../gcc-4.7.2/configure --prefix=/software/compilers/gcc/4.7.2 --with-arch=native --with-pkgversion='4.7.2-clumeq' --with-bugurl=https://www.clumeq.ca/wiki/index.php/Support --enable-languages=c,c++,java,fortran,go --enable-shared --enable-static --enable-threads=posix --disable-multilib --enable-bootstrap export CFLAGS='-O2 -pipe -march=native'
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict compilers
+set       version          4.7.2
+set       prefix           /software/compilers/gcc/$version
+setenv 		CC 		$prefix/bin/gcc
+setenv 		CXX 		$prefix/bin/g++
+
+prepend-path LD_LIBRARY_PATH    $prefix/lib64:$prefix/lib
+prepend-path C_INCLUDE_PATH     $prefix/include
+prepend-path CXX_INCLUDE_PATH   $prefix/include/c++/$version
+prepend-path CPP_INCLUDE_PATH   $prefix/include/c++/$version
+prepend-path CPLUS_INCLUDE_PATH $prefix/include/c++/$version
+prepend-path PATH               $prefix/bin
+prepend-path MANPATH            $prefix/share/man
+prepend-path INFOPATH           $prefix/share/info
+
+

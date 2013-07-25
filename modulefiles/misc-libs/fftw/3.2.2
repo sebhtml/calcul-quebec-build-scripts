@@ -1,0 +1,36 @@
+#%Module1.0
+#####################################################################
+##
+## FFTW 3.2.2
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the FFTW library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) FFTW
+(Version________) 3.2.2
+(Description_Fr_) FFTW est une librairie de routines C pour le calcul de transformées de Fourier discrètes (DFT) en une ou plusieurs dimensions, avec des 
+tailles d'entrée arbitraires, en utilisant des données réelles ou complexes (en plus de données paires/impaires, i.e. la transformée de cosinus/sinus ou 
+DCT/DST). 
+(Description_En_) FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and 
+of both real and complex data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or DCT/DST).
+(Website________) http://www.fftw.org/
+(Authorship_____) Matteo Frigo, Steven G. Johnson
+(Compiler_______) gcc 4.4.2
+(Flags__________) CFLAGS='-O3 -xHOST' ./configure --prefix=/software/lib/fftw-3.2.2 --enable-mpi --enable-threads --enable-shared --enable-float
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict	   misc-libs/fftw/2.1.5
+
+setenv             SYNOPSYS          /software/misc-libs/fftw/3.2.2
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       FPATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

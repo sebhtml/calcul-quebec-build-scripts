@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## SuperLU-DIST lib
+##
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the SuperLU-DIST library to your environment  "
+}
+
+module-whatis "
+	(Category_______) misc-libs
+	(Name___________) SuperLU-DIST
+	(Version________) 2.5
+	(Description_Fr_) SuperLU est une librairie générale pour la solution direct de systèmes larges, creux, et non-symétriques d'équations linéaires sur des machines
+	de haute performance.
+	(Description_En_) SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations on high performance
+	machines.
+	(Website________) http://crd.lbl.gov/~xiaoye/SuperLU/
+	(Authorship_____) Sherry Li, Jim Demmel, John Gilbert, Laura Grigori, Meiyue Shao & al.
+	(Compiler_______) Intel 12
+	(Flags__________)
+	(Dependencies___)
+	(Notes_Fr_______)
+	(Notes_En_______)
+"
+
+set 	             SYNOPSYS          /software/misc-libs/SuperLU/2.5_DIST_intel12
+prepend-path       LD_LIBRARY_PATH   $SYNOPSYS/lib
+prepend-path       C_INCLUDE_PATH    $SYNOPSYS/include

@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## PAPI 5.0.1 (GCC)
+##
+##
+
+proc ModulesHelp { } {
+      puts stderr "\tAdds PAPI to your environment  "
+}
+
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) PAPI"
+module-whatis "(Version________) 5.0.1"
+module-whatis "(Description_Fr_) Interface de programmation pour la performance"
+module-whatis "(Description_En_) Performance application programming interface"
+module-whatis "(Website________) http://icl.cs.utk.edu/papi/"
+module-whatis "(Authorship_____) Phil Mucci, the ICL group, collaborators, contributors"
+module-whatis "(Compiler_______) GCC 4.7.2"
+module-whatis "(Flags__________) None"
+module-whatis "(Dependencies___) GCC 4.7.2"
+module-whatis "(Notes_Fr_______) PAPI et libpfm ne peuvent être utilisés simultanément car PAPI utilise une copie interne de libpfm, créant un conflit."
+module-whatis "(Notes_En_______) PAPI conflicts with libpfm because it uses an internal copy of the library."
+
+conflict           misc-libs/papi
+conflict           misc-libs/libpfm
+#prereq             compilers/gcc/4.7.2
+set                synopsys          /software/misc-libs/papi/5.0.1/gcc_4.7.2
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man

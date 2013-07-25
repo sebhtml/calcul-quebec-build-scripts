@@ -1,0 +1,36 @@
+#%Module1.0
+#####################################################################
+##
+## jdk 1.6.0
+## 
+##
+
+proc ModulesHelp { } {
+	puts stderr "\tAdds java jdk 1.6.0 to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) Java SE Development Kit
+(Version________) 1.6.0
+(Description_Fr_) Le JDK inclut le JRE en plus d'outils de développement en ligne de commande tels que des 
+compilateurs et des dévermineurs qui sont nécessaires ou utiles pour le développement d'appliquettes et 
+d'applications. Le JRE (Java SE Runtime Environment) fournit les librairies, la machine virtuelle Java, et d'autres composants 
+nécessaires afin de pouvoir faire exécuter des appliquettes et des applications écrites en langage de programmation Java.
+(Description_En_) The JDK includes the JRE plus command-line development tools such as compilers and debuggers that 
+are necessary or useful for developing  applets and applications. The JRE (Java SE Runtime Environment) provides the 
+libraries, Java virtual machine, and other components necessary for you to run applets and applications written in the Java programming language.
+(Website________) http://java.sun.com/javase/technologies/index.jsp
+(Authorship_____) Oracle
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv  SYNOPSYS                        /software/java/jdk1.6.0_20
+setenv  JAVA_HOME 	                $env(SYNOPSYS)
+prepend-path  PATH   			$env(SYNOPSYS)/bin
+prepend-path  MANPATH   		$env(SYNOPSYS)/man
+prepend-path  C_INCLUDE_PATH            $env(SYNOPSYS)/include

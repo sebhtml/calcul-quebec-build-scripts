@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## libpfm 4.1.0 (GCC)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds libpfm 4.1.0 (GCC) to your environment	"
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) libpfm
+(Version________) 4.1.0
+(Description_Fr_) Interface pour la mesure de performance utilisant le
+                  matériel
+(Description_En_) Hardware-based performance monitoring interface
+(Website________) http://perfmon2.sourceforge.net/
+(Authorship_____) Hewlett-Packard, Google, FOSS community
+(Compiler_______) GCC 4.4.2
+(Flags__________) Aucun / None
+(Dependencies___) GCC 4.4.2
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           misc-libs/libpfm
+prereq compilers/gcc/4.4.2
+setenv             SYNOPSYS          /software/misc-libs/libpfm/4.1.0_gcc
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

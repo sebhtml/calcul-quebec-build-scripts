@@ -1,0 +1,26 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds samstat 1.08-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) samstat"
+module-whatis "(Version________) 1.08"
+module-whatis "(Description_Fr_) Afficher des statistiques de qualité pour du séquençage à haut débit."
+module-whatis "(Description_En_) Displaying sequence statistics for next generation sequencing"
+module-whatis "(Website________) http://samstat.sourceforge.net/"
+module-whatis "(Authorship_____) Timo Lassmann"
+module-whatis "(Compiler_______) /usr/bin/gcc"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set                synopsys          /software/apps/samstat/1.08-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

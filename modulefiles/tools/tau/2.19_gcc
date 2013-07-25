@@ -1,0 +1,34 @@
+#%Module1.0
+#####################################################################
+##
+## TAU 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds TAU to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) TAU
+(Version________) 2.19
+(Description_Fr_) TAU Performance System® est une boîte à outil de profiling et de tracing pour l'analyse de performance de programmes parallèles écrits en 
+Fortran, en C, en C++, en Java, et en Python.
+(Description_En_) TAU Performance System® is a portable profiling and tracing toolkit for performance analysis of parallel programs written in Fortran, C, C++, 
+Java, Python. 
+(Website________) http://www.cs.uoregon.edu/research/tau/home.php
+(Authorship_____) PRL (Performance Research Lab), University of Oregon
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict tools/tau
+setenv             SYNOPSYS          /software/tools/tau-2.19_gcc
+prepend-path       TAU_MAKEFILE      $env(SYNOPSYS)/x86_64/lib/Makefile.tau-pdt
+prepend-path       PATH              $env(SYNOPSYS)/x86_64/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/x86_64/lib/
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+

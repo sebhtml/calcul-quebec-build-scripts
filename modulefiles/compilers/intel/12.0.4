@@ -1,0 +1,37 @@
+#%Module1.0
+#####################################################################
+##
+## Intel compilers 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the Intel Parallel Studio XE 2011 to your environment."
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Intel Parallel Studio XE
+(Version________) 2011_update2
+(Description_Fr_) Le suite de compilateurs d'Intel.
+(Description_En_) The Intel Compiler Suite.
+(Website________) http://software.intel.com/en-us/intel-compilers/
+(Authorship_____) Intel
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict           compilers
+setenv             SYNOPSYS           /software/intel/parallel_studio_xe_2011_update2
+setenv             CC                 icc -i-dynamic
+setenv             CXX                icpc -i-dynamic
+setenv             LD                 xild
+setenv             AR                 xiar
+setenv             F77                ifort -i-dynamic
+setenv             FC                 ifort -i-dynamic
+setenv             INTEL_LICENSE_FILE 28518@10.225.3.14
+prepend-path       LD_LIBRARY_PATH    $env(SYNOPSYS)/composerxe-2011.4.191/compiler/lib/intel64
+prepend-path       PATH               $env(SYNOPSYS)/composerxe-2011.4.191/bin/intel64
+prepend-path	   MANPATH	      $env(SYNOPSYS)/man/en_US

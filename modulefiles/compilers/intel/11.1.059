@@ -1,0 +1,39 @@
+#%Module1.0
+#####################################################################
+##
+## Intel compilers 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the intel compiler to your environment  "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Intel compiler
+(Version________) 11.1.059
+(Description_Fr_) Le suite de compilateurs d'Intel.
+(Description_En_) The Intel Compiler Suite.
+(Website________) http://software.intel.com/en-us/intel-compilers/
+(Authorship_____) Intel
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict           compilers
+setenv             SYNOPSYS          /software/intel
+setenv             CC                icc -i-dynamic
+setenv             CXX               icpc -i-dynamic
+setenv             LD                xild
+setenv             AR                xiar
+setenv             F77               ifort -i-dynamic
+setenv             FC                ifort -i-dynamic
+setenv             INTEL_LICENSE_FILE 28518@10.225.3.14
+##setenv             INTEL_LICENSE_FILE 28518@10.225.3.12
+##setenv             INTEL_LICENSE_FILE $env(SYNOPSYS)/licenses
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/Compiler/11.1.059/lib/intel64
+prepend-path       PATH              $env(SYNOPSYS)/Compiler/11.1.059/bin/intel64
+prepend-path	   MANPATH	     $env(SYNOPSYS)/Compiler/11.1.059/man

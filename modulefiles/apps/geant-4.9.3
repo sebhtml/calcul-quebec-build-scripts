@@ -1,0 +1,49 @@
+#%Module1.0
+#####################################################################
+##
+## geant 4.9.3
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds geant 4.9.3 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Geant 4
+(Version________) 4.9.3
+(Description_Fr_) Geant4 est une boîte à outils pour la simulation du passage des particules à travers la matière. Ses domaines d'application comprennent 
+les hautes énergies, le nucléaire et la physique des accélérateurs, ainsi que la médecine et les sciences spatiales.
+(Description_En_) Geant4 is a toolkit for the simulation of the passage of particles through matter. Its areas of application include high energy, nuclear 
+and accelerator physics, as well as studies in medical and space science.
+(Website________) http://geant4.cern.ch/
+(Authorship_____) The Geant 4 Team
+(Compiler_______) gcc
+(Flags__________) 
+(Dependencies___) clhep 2.0.4.5
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+prereq misc-libs/clhep-2.0.4.5
+
+setenv  SYNOPSYS                        /software/geant4.9.3
+setenv  G4ABLADATA 	                $env(SYNOPSYS)/data/G4ABLA3.0
+setenv  G4INCLUDE     		    	$env(SYNOPSYS)/include/geant4
+setenv  G4INSTALL     			$env(SYNOPSYS)/src/geant4
+setenv  G4LEDATA     			$env(SYNOPSYS)/data/G4EMLOW6.9
+setenv  G4LEVELGAMMADATA     		$env(SYNOPSYS)/data/PhotonEvaporation2.0
+setenv  G4LIB_BUILD_SHARED     		1
+setenv  G4LIB_BUILD_STATIC     		1
+setenv  G4LIB     			$env(SYNOPSYS)/lib/geant4
+setenv  G4LIB_USE_GRANULAR     		1
+setenv  G4NEUTRONHPDATA     		$env(SYNOPSYS)/data/G4NDL3.13
+setenv  G4RADIOACTIVEDATA     		$env(SYNOPSYS)/data/RadioactiveDecay3.2
+setenv  G4REALSURFACEDATA     		$env(SYNOPSYS)/data/RealSurface1.0
+setenv  G4SYSTEM     			Linux-g++
+setenv  G4UI_USE_TCSH     		1
+setenv  G4VIS_BUILD_VRML_DRIVER     	1
+setenv  G4VIS_USE_VRML              	1
+setenv  G4WORKDIR                   	$env(HOME)/geant4
+prepend-path  LD_LIBRARY_PATH   	$env(SYNOPSYS)/lib/geant4/Linux-g++
+prepend-path  PATH   			$env(HOME)/geant4/bin/Linux-g++

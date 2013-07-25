@@ -1,0 +1,35 @@
+#%Module1.0
+#####################################################################
+##
+## NAMD 2.9
+##
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds NAMD to your environment"
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) namd"
+module-whatis "(Version________) 2.9"
+module-whatis "(Description_Fr_) NAMD est un programme parallèle de dynamique"
+module-whatis "                  moléculaire à haute performance conçu pour"
+module-whatis "                  la simulation de systèmes bio-moléculaires"
+module-whatis "                  complexes"
+module-whatis "(Description_En_) NAMD is a parallel molecular dynamics code"
+module-whatis "                  designed for high-performance simulation of"
+module-whatis "                  large biomolecular systems"
+module-whatis "(Website________) http://www.ks.uiuc.edu/Research/namd/"
+module-whatis "(Authorship_____) Theoretical and Computational Biophysics Group"
+module-whatis "(Compiler_______) GCC 4.6.1"
+module-whatis "(Flags__________) -march=native -O3 -fexpensive-optimizations"
+module-whatis "                  -ffast-math"
+module-whatis "(Dependencies___) GCC 4.6.1, OpenMPI 1.4.5, FFTW 3.2.2"
+module-whatis "(Notes_Fr_______) Cette version de NAMD utilise OpenMPI"
+module-whatis "(Notes_En_______) This version of NAMD uses OpenMPI"
+
+prereq                              compilers/gcc/4.6.1
+prereq                              mpi/openmpi/1.4.5_gcc
+prereq                              misc-libs/fftw/3.2.2_gcc_r1
+
+set             synopsys            /software/apps/namd/2.9
+prepend-path    PATH                $synopsys

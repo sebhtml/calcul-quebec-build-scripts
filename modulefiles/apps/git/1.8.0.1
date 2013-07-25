@@ -1,0 +1,33 @@
+#%Module1.0
+#####################################################################
+##
+## Git 1.8.0.1
+## 
+##
+proc ModulesHelp { } {
+    puts stderr "\tAdds Git 1.8.0.1 to your environment."
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) git"
+module-whatis "(Version________) 1.8.0.1"
+module-whatis "(Description_Fr_) Git est un logiciel gratuit et libre de gestion de versions décentralié  (SCM)."
+module-whatis "(Description_En_) Git is a free & open source, distributed version control system designed to handle everything from small to very large projects with speed and efficiency."
+module-whatis "(Website________) http://git-scm.com/"
+module-whatis "(Authorship_____) See: http://git-scm.com/about"
+module-whatis "(Compiler_______) GCC 4.1.2 (system default)"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set                synopsys          /software/apps/git/1.8.0.1
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PYTHONPATH        $synopsys/lib/python2.4/site-packages
+prepend-path       PERL5LIB          $synopsys/lib/perl5/site_perl/5.8.8
+prepend-path       PERL5LIB          $synopsys/lib/perl5/site_perl
+prepend-path       PERL5LIB          $synopsys/lib64/perl5/site_perl/5.8.8
+prepend-path       PERL5LIB          $synopsys/lib64/perl5/site_perl
+prepend-path       PERL5LIB          $synopsys/lib64/perl5/5.8.8
+

@@ -1,0 +1,26 @@
+#%Module1.0
+#####################################################################
+##
+## bison 2.7
+## 
+##
+proc ModulesHelp { } { 
+    puts stderr "\tAdds bison 2.7 to your environment  "
+}
+
+module-whatis "(Category_______) tools"
+module-whatis "(Name___________) bison"
+module-whatis "(Version________) 2.7"
+module-whatis "(Description_Fr_) Outils de construction"
+module-whatis "(Description_En_) Build system"
+module-whatis "(Website________) http://www.gnu.org/software/bison/"
+module-whatis "(Authorship_____) Free Software Foundation, Inc."
+module-whatis "(Compiler_______) gcc 4.7.2"
+module-whatis "(Flags__________) CFLAGS='-O2 -march=native'./configure --prefix=/software/tools/bison/2.7"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______) "
+module-whatis "(Notes_En_______) "
+
+set		synopsys	/software/tools/bison/2.7
+prepend-path	PATH		$synopsys/bin
+prepend-path	MANPATH		$synopsys/share/man

@@ -1,0 +1,47 @@
+#%Module1.0
+#####################################################################
+##
+## MVAPICH2 MPI lib
+##
+##
+proc ModulesHelp { } {
+       puts stderr "\tAdds the MVAPICH2 MPI library to your environment  "
+}
+
+module-whatis "(Category_______) mpi"
+module-whatis "(Name___________) MVAPICH2"
+module-whatis "(Version________) 1.8"
+module-whatis "(Description_Fr_) Implémentation libre, portable, à hautes"
+module-whatis "                  performances de MPI-2 basée sur MPICH pour"
+module-whatis "                  InfiniBand et autres interfaces de"
+module-whatis "                  transport."
+module-whatis "(Description_En_) Free, portable, high-performance"
+module-whatis "                  MPICH-based MPI-2 implementation for"
+module-whatis "                  InfiniBand and other transport interfaces."
+module-whatis "(Website________) http://mvapich.cse.ohio-state.edu/"
+module-whatis "(Authorship_____) The MVAPICH team, Ohio State University"
+module-whatis "(Compiler_______) Intel Compilers 12.0.4"
+module-whatis "(Flags__________) ./configure --with-device=ch3:mrail"
+module-whatis "                  --with-rdma=gen2 --enable-threads=default"
+module-whatis "                  --enable-shared --enable-sharedlibs=gcc"
+module-whatis "                  --enable-fast=all,O2 --enable-romio"
+module-whatis "                  --with-file-system=lustre --enable-mpe"
+module-whatis "                  --enable-cxx --disable-rpath"
+module-whatis "                  FLAGS='-O2 -march=native'"
+module-whatis "(Dependencies___) Intel Compilers"
+module-whatis "(Notes_Fr_______) "
+module-whatis "(Notes_En_______) "
+
+conflict mpi
+prereq load compilers/intel/12.0.4
+system mvapich2-check
+
+set             synopsys          /software/MPI/mvapich2/1.8_intel
+setenv             HYDRA_RMK         pbs
+setenv             HYDRA_LAUNCHER_EXTRA_ARGS  "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q"
+prepend-path       PATH              $synopsys/bin
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       CXX_INCLUDE_PATH  $synopsys/include
+prepend-path       CPP_INCLUDE_PATH  $synopsys/include
+prepend-path       MANPATH           $synopsys/share/man

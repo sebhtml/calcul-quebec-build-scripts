@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## SuperLU
+##
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the SuperLU library to your environment  "
+}
+
+module-whatis "
+	(Category_______) misc-libs
+	(Name___________) SuperLU
+	(Version________) 4.2
+	(Description_Fr_) Librairie pour la résolution de systèmes d'équations linéaires.
+	(Description_En_) General purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations on high performance machines.
+	(Website________) http://crd.lbl.gov/~xiaoye/SuperLU/#superlu
+	(Authorship_____)
+	(Compiler_______) icc
+	(Flags__________) -O3 -xHost -fPIC -m64
+	(Dependencies___)
+	(Notes_Fr_______)
+	(Notes_En_______)
+"
+
+set 	         SYNOPSYS          /software/misc-libs/SuperLU/4.2_intel12
+prepend-path    LD_LIBRARY_PATH   $SYNOPSYS/lib
+prepend-path    C_INCLUDE_PATH    $SYNOPSYS/include

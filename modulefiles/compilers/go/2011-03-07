@@ -1,0 +1,57 @@
+#%Module1.0
+#####################################################################
+##
+## Go compiler
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the go compiler to your environment  "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Go
+(Version________) 2011-03-07
+(Description_Fr_) Le compilateur Go de Google.
+(Description_En_) The Go compiler from Google.
+(Website________) http://golang.org/
+(Authorship_____) Google
+(Compiler_______) GCC 4.4.2
+(Flags__________)
+(Dependencies___) GCC 4.4.2
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+module             load compilers/gcc/4.4.2
+setenv             SYNOPSYS          /software/compilers/go-2011-03-07
+setenv             GOROOT            $env(SYNOPSYS) 
+prepend-path       PATH              $env(SYNOPSYS)/bin#%Module1.0
+#####################################################################
+##
+## Go compiler
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the go compiler to your environment  "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Go
+(Version________) 2011-03-07
+(Description_Fr_) Le compilateur Go de Google.
+(Description_En_) The Go compiler from Google.
+(Website________) http://golang.org/
+(Authorship_____) Google
+(Compiler_______) GCC 4.4.2
+(Flags__________)
+(Dependencies___) GCC 4.4.2
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+module             load compilers/gcc/4.4.2
+setenv             SYNOPSYS          /software/compilers/go-2011-03-07
+setenv             GOROOT            $env(SYNOPSYS) 
+prepend-path       PATH              $env(SYNOPSYS)/bin

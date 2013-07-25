@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## GNU Parallel
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds GNU Parallel to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) GNU Parallel
+(Version________) 20110522
+(Description_Fr_) Utilitaire shell permettant d'exécuter plusieurs commandes en parallèle.
+(Description_En_) GNU parallel is a shell tool for executing jobs in parallel.
+(Website________) http://www.gnu.org/software/parallel/
+(Authorship_____) GNU
+(Compiler_______) GCC 4.1.2 (system compiler)
+(Flags__________)
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+setenv             SYNOPSYS          /software/tools/gnu-parallel/20110522
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

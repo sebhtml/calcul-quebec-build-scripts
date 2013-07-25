@@ -1,0 +1,24 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds ray 2.2.0-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) ray"
+module-whatis "(Version________) 2.2.0-1"
+module-whatis "(Description_Fr_) "
+module-whatis "(Description_En_) Ray -- Parallel genome assemblies for parallel DNA sequencing"
+module-whatis "(Website________) http://denovoassembler.sourceforge.net/"
+module-whatis "(Authorship_____) "
+module-whatis "(Compiler_______) "
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+module load compilers/gcc/4.7.2 
+module load mpi/openmpi/1.6.3_gcc
+
+set                synopsys          /software/apps/ray/2.2.0-1
+prepend-path       PATH              $synopsys/bin

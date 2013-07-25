@@ -1,0 +1,27 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds bowtie/2.1.0-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps "
+module-whatis "(Name___________) bowtie"
+module-whatis "(Version________) 2.1.0"
+module-whatis "(Description_Fr_) Bowtie 2 est un aligneur d'ADN efficace en mémoire et super rapide."
+module-whatis "(Description_En_) Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. It is particularly good at aligning reads of about 50 up to 100s or 1,000s of characters, and particularly good at aligning to relatively long (e.g. mammalian) genomes. "
+module-whatis "(Website________) http://bowtie-bio.sourceforge.net/bowtie2/index.shtml"
+module-whatis "(Authorship_____) Langmead B, Salzberg S."
+module-whatis "(Compiler_______) /usr/bin/gcc"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+
+
+set                synopsys          /software/apps/bowtie/2.1.0-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

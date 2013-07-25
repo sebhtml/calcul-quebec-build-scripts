@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## SciPy 0.8.0
+##
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds SciPy 0.8.0 to your Python environment."
+}
+
+module-whatis "
+        (Category_______) misc-libs
+        (Name___________) SciPy
+        (Version________) 0.8.0
+        (Description_Fr_) SciPy est une librairie à source ouverte d'outils scientifiques pour Python. Basée sur la librairie NumPy, elle rassemble une variété de modules scientifiques et d'ingénierie dans un seul paquet.
+        (Description_En_) SciPy is an Open Source library of scientific tools for Python. It depends on the NumPy library, and it gathers a variety of high level science and engineering modules together as a single package.  
+        (Website________) http://www.scipy.org/
+        (Authorship_____) Numpy developers
+        (Compiler_______) icc 11.1.059
+        (Flags__________) -O3 -xHost -fPIC -fp-model precise
+        (Dependencies___) Python 2.6.4, Intel C Compiler 11.1.059, Intel MKL 10.2.2.025, NumPy 1.4.1
+        (Notes_Fr_______) Cette version de NumPy utilise Intel MKL au lieu d'ATLAS.
+        (Notes_En_______) This version of NumPy uses Intel MKL instead of ATLAS.
+"
+
+prereq                            apps/python-2.6.4
+prereq                            compilers/intel/11.1.059
+prereq                            blas-libs/mkl/10.2.2.025
+prereq                            misc-libs/numpy/1.4.1_intel
+setenv          SYNOPSYS          /software/misc-libs/scipy/0.8.0_intel
+prepend-path    PYTHONPATH        $env(SYNOPSYS)/lib/python2.6/site-packages 
+

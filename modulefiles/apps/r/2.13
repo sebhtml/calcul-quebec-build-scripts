@@ -1,0 +1,32 @@
+#%Module1.0
+proc ModulesHelp { } {
+puts stderr "\tAdds R 2.13.0 to your environment"
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) R
+(Version________) 2.13
+(Description_Fr_) Environnement de developpement et langage statistiques R.
+(Description_En_) R language and development environment for statistics.
+(Website________) http://software.intel.com/en-us/intel-compilers/
+(Authorship_____) Intel
+(Compiler_______) compilers/intel/11.1.059
+(Flags__________) -O3 -xHOST -ipo --enable-R-shlib --without-x --with-blas --with-lapack
+(Dependencies___) blas-libs/mkl/10.2.2.025
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict r
+prereq compilers/intel/11.1.059
+prereq blas-libs/mkl/10.2.2.025
+setenv SYNOPSYS /software/apps/r/2.13.0
+prepend-path PATH $env(SYNOPSYS)/bin
+prepend-path MANPATH $env(SYNOPSYS)/share/man
+prepend-path LD_LIBRARY_PATH $env(SYNOPSYS)/lib64
+prepend-path PKG_CONFIG_PATH $env(SYNOPSYS)/lib64/pkgconfig
+setenv R_HOME $env(SYNOPSYS)/lib64/R
+prepend-path LD_LIBRARY_PATH $env(R_HOME)/lib
+prepend-path C_INCLUDE_PATH $env(R_HOME)/include
+

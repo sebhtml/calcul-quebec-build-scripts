@@ -1,0 +1,34 @@
+#%Module1.0
+#####################################################################
+##
+## PETSC lib
+##
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the petsc library to your environment  "
+}
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) PETSC"
+module-whatis "(Version________) 3.3-p4"
+module-whatis "(Description_Fr_) PETSc (Portable, Extensible Toolkit for Scientific Computation), prononcé PET-see (le S est silencieux), est une suite de structures de données
+et de routines pour une solution évolutive (parallèle) d'applications scientifiques modelées par des équations différencielles partielles. Elle emploie le standard MPI pour le parallélisme."
+module-whatis "(Description_En_) PETSc (Portable, Extensible Toolkit for Scientific Computation), pronounced PET-see (the S is silent), is a suite of data structures and
+routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations.  It employs the MPI standard for parallelism."
+module-whatis "(Website________) http://www.mcs.anl.gov/petsc/petsc-as/"
+module-whatis "(Authorship_____) (PETSc authors) Barry, Satish, Matt, Hong, Jed, Victor, Dmitry, Lisandro & al."
+module-whatis "(Compiler_______) Intel 2013"
+module-whatis "(Flags__________) ./config/configure.py PETSC_ARCH=linux-gnu-intel --CFLAGS=-O3 -xHost -mkl -fPIC -m64 --FFLAGS=-O3 -xHost -mkl -fPIC -m64 --AR-FLAGS=-rcu --prefix=/software/misc-libs/petsc/3.3-p4/intel2013/openmpi1.6.3 --with-dynamic-loading --with-x=0  --with-mpi-compilers=1 --with-mpi-dir=/software/MPI/openmpi/1.6.3_intel  --known-mpi-shared-libraries=1  --with-debugging=no  --with-shared-libraries=1 --with-blas-lapack-dir=/software/intel/composer_xe_2013/mkl/lib/intel64 --with-scalapack=1 --with-scalapack-include=/software/intel/composer_xe_2013/mkl/include --with-scalapack-lib=/software/intel/composer_xe_2013/mkl/lib/intel64/libmkl_scalapack_lp64.a --with-blacs=1 --with-blacs-include=/software/intel/composer_xe_2013/mkl/include --with-blacs-lib=/software/intel/composer_xe_2013/mkl/lib/intel64/libmkl_blacs_openmpi_lp64.a --download-mumps=yes --download-ptscotch=1 --download-superlu=yes --download-superlu_dist=yes --download-parmetis=yes --download-metis=yes --download-ml=yes --download-prometheus=yes --download-hypre=yes"
+module-whatis "(Dependencies___) compilers/intel/2013, mpi/openmpi/1.6.3_intel, blas-libs/mkl/11.0"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+prereq 		compilers/intel/2013
+prereq		mpi/openmpi/1.6.3_intel
+prereq 		blas-libs/mkl/11.0
+set                 SYNOPSYS          /software/misc-libs/petsc/3.3-p4/intel2013/openmpi1.6.3
+setenv		PETSC_DIR 		$SYNOPSYS
+prepend-path 	PATH 			$SYNOPSYS/bin
+prepend-path 	LD_LIBRARY_PATH 	$SYNOPSYS/lib
+prepend-path 	C_INCLUDE_PATH 		$SYNOPSYS/include
+
+

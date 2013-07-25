@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## PDT 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the pdtoolkit to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) PDT
+(Version________) 3.15
+(Description_Fr_) La suite logicielle PDToolKit est un ensemble d'outils d'assistance par ordinateur (Computer Aided Design, CAD) pour être utilisés par des 
+designers de procédures.
+(Description_En_) The PDToolKit suite of applications is an integrated set of Computer Aided Design (CAD) tools for use by the Procedures Designer.
+(Website________) http://www.pdtoolkit.com/
+(Authorship_____) ASD
+(Compiler_______) gcc
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/tools/pdtoolkit-3.15_gcc/x86_64
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib/
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include

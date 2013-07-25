@@ -1,0 +1,35 @@
+#%Module1.0
+#####################################################################
+##
+## Parallel HDF5
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the Parallel HDF5 library to your environment."
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) phdf5
+(Version________) 1.8.6
+(Description_Fr_) HDF5 est une modèle de données, une librairie et un format de fichiers pour stocker et gérer des données. Ce modèle de données supporte une quantité illimitée de type de données et a été conçu pour des transferts efficaces et pour un haut débit de données complexes.
+(Description_En_) HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.
+(Website________) http://www.hdfgroup.org/HDF5/
+(Authorship_____) The HDF Group
+(Compiler_______) icc 11.1.059
+(Flags__________) CC='mpicc' FC='mpif90' ./configure --prefix=/software/misc-libs/phdf5/1.8.6_intel --enable-fortran CFLAGS='-O3 -xHost -fPIC' FFLAGS='-O3 -xHost -fPIC' FCFLAGS='-O3 -xHost -fPIC'
+(Dependencies___) compilers/intel/11.1.059, mpi/openmpi/1.4.3_intel
+(Notes_Fr_______) Ceci est la version parallèle de HDF5. Cette version ne supporte pas l'interface C++.
+(Notes_En_______) This is the parallel version of HDF5. This version doesn't support the C++ interface.
+"
+
+prereq                                compilers/intel/11.1.059
+prereq                                mpi/openmpi/1.4.3_intel
+setenv             SYNOPSYS           /software/misc-libs/phdf5/1.8.6_intel
+setenv             ROMIO_HINTS        $env(SYNOPSYS)/etc/romio-hints
+prepend-path       LD_LIBRARY_PATH    $env(SYNOPSYS)/lib
+prepend-path       LIBRARY_PATH    $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH     $env(SYNOPSYS)/include
+prepend-path       CPLUS_INCLUDE_PATH $env(SYNOPSYS)/include
+prepend-path       PATH               $env(SYNOPSYS)/bin
+

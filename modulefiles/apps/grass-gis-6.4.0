@@ -1,0 +1,37 @@
+#%Module1.0
+#####################################################################
+##
+## GRASS GIS 6.4.0 
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds GRASS GIS 6.4.0 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) GRASS GIS
+(Version________) 6.4.0
+(Description_Fr_)
+(Description_En_) Commonly referred to as GRASS, this is free Geographic Information System (GIS) software used for geospatial data management and analysis, image processing, graphics/maps production, spatial modeling, and visualization.
+(Website________) http://grass.osgeo.org/index.php
+(Authorship_____)
+(Compiler_______) GCC 4.4.2
+(Flags__________) --enable-64bit --with-lapack --with-cxx --with-pthread --with-python --with-nls --without-fftw --without-cairo --without-x --without-tcltk --without-opengl
+(Dependencies___) lapack, libpng-1.4.0
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+setenv             SYNOPSYS          /software/apps/grass-gis
+setenv             GISBASE           /software/apps/grass-gis/grass-6.4.0
+setenv             GISRC             $env(HOME)/.grassrc6
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       PATH              $env(SYNOPSYS)/grass-6.4.0/bin
+prepend-path       PATH              $env(SYNOPSYS)/grass-6.4.0/scripts
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/grass-6.4.0/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/grass-6.4.0/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man
+prepend-path       MANPATH           $env(SYNOPSYS)/grass-6.4.0/man

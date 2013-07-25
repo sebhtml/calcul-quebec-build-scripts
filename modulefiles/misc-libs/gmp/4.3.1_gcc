@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## GMP lib 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the gmp library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) GNU Multiple Precision Arithmetic Library (GMP)
+(Version________) 4.3.1
+(Description_Fr_) GMP est une librairie gratuite pour l'arithmétique de précision arbitraire, les opérations sur des entiers signés, sur 
+les nombres rationnels, et les nombres à point flottant.
+(Description_En_) GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating 
+point numbers.
+(Website________) http://gmplib.org/
+(Authorship_____) GNU
+(Compiler_______) gcc 4.4.2
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/gmp-4.3.1_gcc/
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

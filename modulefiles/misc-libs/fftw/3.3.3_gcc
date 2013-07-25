@@ -1,0 +1,41 @@
+#%Module1.0
+#####################################################################
+##
+## FFTW 3.3.3 (GCC)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds FFTW 3.3.3 (GCC) to your environment  "
+}
+
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) FFTW"
+module-whatis "(Version________) 3.3.3"
+module-whatis "(Description_Fr_) Bibliothèque de routines C pour les transformées de Fourier discrètes (DFT)"
+module-whatis "(Description_En_) C subroutine library for computing the discrete Fourier transform (DFT)"
+module-whatis "(Website________) http://www.fftw.org/"
+module-whatis "(Authorship_____) Matteo Frigo and Steven G. Johnson, MIT"
+module-whatis "(Compiler_______) GCC 4.7.2"
+module-whatis "                  Configure flags:"
+module-whatis "                  --enable-shared --enable-mpi --enable-threads --enable-openmp --enable-sse2"
+module-whatis "--disable-openmp"
+module-whatis "(Dependencies___) GCC 4.7.2, OpenMPI 1.6.3"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+prereq compilers/gcc
+prereq mpi/openmpi/1.6.3_gcc
+
+
+set 	             synopsys          /software/misc-libs/fftw/3.3.3/gcc/4.7.2/openmpi/1.6.3
+prepend-path       PATH              $synopsys/bin
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       FPATH    $synopsys/include
+prepend-path       CPLUS_INCLUDE_PATH    $synopsys/include
+prepend-path       CPLUS_INCLUDE_PATH    $synopsys/include
+prepend-path       INFOPATH          $synopsys/share/info
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+

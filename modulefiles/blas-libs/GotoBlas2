@@ -1,0 +1,29 @@
+#%Module1.0
+#####################################################################
+##
+## GotoBLAS2 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the GotoBLAS2 library to your environment  "
+}
+
+module-whatis "
+(Category_______) blas-libs
+(Name___________) GotoBLAS2
+(Version________) 
+(Description_Fr_) BLAS (Basic Linear Algebra Subprograms) optimisé.
+(Description_En_) Optimized BLAS (Basic Linear Algebra Subprograms).
+(Website________) http://www.tacc.utexas.edu/tacc-projects/gotoblas2/
+(Authorship_____) Kazushige Goto 
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict           blas-libs
+setenv             SYNOPSYS          /software/GotoBlas2
+setenv             GOTOBLAS          $env(SYNOPSYS)
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)

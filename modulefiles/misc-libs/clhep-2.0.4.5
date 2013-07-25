@@ -1,0 +1,39 @@
+#%Module1.0
+#####################################################################
+##
+## CLHEP 2.0.4.5 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the CLHEP 2.0.4.5 library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) CLHEP
+(Version________) 2.0.4.5
+(Description_Fr_) CLHEP (acronyme pour 'A Class Library for High Energy Physics'), est une librairie en C++ qui fournit des
+classes utilitaires générales pour la programmation numérique, le calcul vectoriel, la géométrie, la génération de nombres 
+pseudo-aléatoires et l'algèbre linéaire. Ces classes ont pour objectif principal la réalisation d'analyses et la simulation de hautes énergies 
+physiques.
+(Description_En_) CLHEP (short for A Class Library for High Energy Physics), is a C++ library that provides utility classes for general	
+numerical programming, vector arithmetic, geometry, pseudorandom number generation, and linear algebra, specifically targeted for high
+energy physics simulation and analysis software.
+(Website________) http://proj-clhep.web.cern.ch/proj-clhep/
+(Authorship_____) Joe Boudreau & al
+(Compiler_______) gcc 4.4.2
+(Flags__________)
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+setenv             SYNOPSYS          /software/misc-libs/clhep/2.0.4.5
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+
+setenv  CLHEP_LIB_DIR			$env(SYNOPSYS)/lib
+setenv  CLHEP_BASE_DIR			$env(SYNOPSYS)
+setenv  CLHEP_INCLUDE_DIR		$env(SYNOPSYS)/include
+setenv  CLHEP_LIB			CLHEP

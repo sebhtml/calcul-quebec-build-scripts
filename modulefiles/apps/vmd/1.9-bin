@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## VMD 1.9 (binary)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds VMD 1.9 (binary) to your environment	"
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) VMD (Visual Molecular Dynamics)
+(Version________) 1.9 (binary)
+(Description_Fr_) Visualisation et analyse pour la dynamique moléculaire
+(Description_En_) Molecular dynamics visualization and analysis
+(Website________) http://www.ks.uiuc.edu/Research/vmd/
+(Authorship_____) The Theoretical and Computational Biophysics Group
+(Compiler_______) Distribution binaire / Binary distribution
+(Flags__________) Aucun / None
+(Dependencies___) Aucune / None
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict            apps/vmd
+setenv              SYNOPSYS    /software/apps/vmd/1.9-bin
+prepend-path		PATH		$env(SYNOPSYS)

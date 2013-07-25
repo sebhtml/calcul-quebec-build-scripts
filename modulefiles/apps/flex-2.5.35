@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## Flex 2.5.35 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Flex 2.5.35 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Flex
+(Version________) 2.5.35
+(Description_Fr_) Flex est un générateur d'analyseur lexical rapide. Il s'agit d'un outil pour générer des programmes qui effectuent du filtrage sur du 
+texte.
+(Description_En_) Flex is a fast lexical analyser generator. It is a tool for generating programs that perform pattern-matching on text.
+(Website________) http://flex.sourceforge.net/
+(Authorship_____) The Flex Project
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/apps/flex-2.5.35
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/man

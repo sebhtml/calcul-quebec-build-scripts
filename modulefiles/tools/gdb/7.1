@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## GDB 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds GDB 7.1 to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) GDB
+(Version________) 7.1
+(Description_Fr_) GDB, le dévermineur pour le projet GNU, vous permet de voir ce qui se passe 'à l'intérieur' d'un programme lors de son exécution -- ou ce que le 
+programme était en train de faire lorsqu'il a carambolé.
+(Description_En_) GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was 
+doing at the moment it crashed.
+(Website________) http://www.gnu.org/software/gdb/
+(Authorship_____) GNU
+(Compiler_______) gcc
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/tools/gdb-7.1
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man
+#prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib:$env(SYNOPSYS)/lib64
+

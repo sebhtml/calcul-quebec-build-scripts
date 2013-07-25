@@ -1,0 +1,73 @@
+#%Module1.0
+#####################################################################
+##
+## TAU 2.21.1 (Intel)
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds TAU to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) TAU
+(Version________) 2.21.1 (Intel)
+(Description_Fr_) TAU Performance System est un ensemble d’outils pour le
+                  profilage et le traçage visant l’analyses des performance de
+                  programmes parallèles écrits en Fortran, C, C++, Java et
+                  Python.
+(Description_En_) TAU Performance System is a portable profiling and tracing
+                  toolkit for performance analysis of parallel programs written
+                  in Fortran, C, C++, Java, Python. 
+(Website________) http://www.cs.uoregon.edu/research/tau/
+(Authorship_____) PRL (Performance Research Lab), University of Oregon
+                  Los Alamos National Laboratory
+                  Jülich Research Centre
+(Compiler_______) Intel Compilers 11.1.059
+(Flags__________) Tau installer flags:
+                      pdt mpi opari dwarf papi vtf otf
+(Dependencies___) Intel Compilers 11.1.059
+                  OpenMPI 1.4.3
+                  BFD 2.20 (internal copy)
+                  PDT 3.17 (loaded automatically)
+                  Dwarf 20110612 (loaded automatically)
+                  PAPI 4.1.3 (loaded automatically)
+                  Opari2 1.0 RC1 (loaded automatically)
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+prereq             compilers/intel/11.1.059
+prereq             mpi/openmpi/1.4.3_intel
+
+conflict           tools/pdt
+set                pdthome           /software/tools/pdt/3.17_intel/x86_64
+prepend-path       PATH              $pdthome/bin
+prepend-path       LD_LIBRARY_PATH   $pdthome/lib
+prepend-path       C_INCLUDE_PATH    $pdthome/include
+
+conflict           misc-libs/dwarf
+set                dwarfhome         /software/misc-libs/dwarf/20110612_intel
+prepend-path       LD_LIBRARY_PATH   $dwarfhome/lib
+prepend-path       C_INCLUDE_PATH    $dwarfhome/include
+prepend-path       PATH              $dwarfhome/bin
+prepend-path       MANPATH           $dwarfhome/share/man
+
+conflict           misc-libs/papi
+set                papihome          /software/misc-libs/papi/4.1.3_intel
+prepend-path       LD_LIBRARY_PATH   $papihome/lib
+prepend-path       C_INCLUDE_PATH    $papihome/include
+prepend-path       PATH              $papihome/bin
+prepend-path       MANPATH           $papihome/share/man
+
+conflict           tools/opari2
+set                opari2home        /software/tools/opari2/1.0-rc1_intel
+prepend-path       PATH              $opari2home/bin
+prepend-path       C_INCLUDE_PATH    $opari2home/include
+
+conflict           tools/tau
+set                synopsys          /software/tools/tau/2.21.1_intel
+prepend-path       PATH              $synopsys/x86_64/bin
+prepend-path       LD_LIBRARY_PATH   $synopsys/x86_64/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+setenv             TAU_MAKEFILE      $synopsys/x86_64/lib/Makefile.tau-icpc-mpi-pdt

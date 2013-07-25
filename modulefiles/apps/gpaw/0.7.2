@@ -1,0 +1,34 @@
+#%Module1.0
+#####################################################################
+##
+## GPAW
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds GPAW to your Python environment."
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) gpaw
+(Version________) 0.7.2 build 6974
+(Description_Fr_) GPAW est une librairie Python basée sur la théorie de densité fonctionnelle utilisant la méthode PAW.
+(Description_En_) GPAW is a density-functional theory (DFT) Python code based on the projector-augmented wave (PAW) method. It uses real-space uniform grids and multigrid methods or atom-centered basis-functions.
+(Website________) https://wiki.fysik.dtu.dk/gpaw/index.html
+(Authorship_____) CAMd
+(Compiler_______) icc 11.1.059
+(Flags__________)
+(Dependencies___) Python 2.6, NumPy, ASE, OpenMPI 1.4.3 (Intel)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+prereq                               apps/python-2.6.4
+prereq                               misc-libs/numpy
+prereq                               misc-libs/ase
+prereq                               mpi/openmpi/1.4.3_intel
+setenv             SYNOPSYS          /software/apps/gpaw/0.7.2
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       PYTHONPATH        $env(SYNOPSYS)/lib/python2.6/site-packages
+prepend-path       GPAW_SETUP_PATH   $env(SYNOPSYS)/gpaw-setups-0.6.6300
+

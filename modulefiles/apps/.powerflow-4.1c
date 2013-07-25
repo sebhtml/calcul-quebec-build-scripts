@@ -1,0 +1,34 @@
+#%Module1.0
+#####################################################################
+##
+## PowerFLOW 4.1c
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds PowerFLOW 4.1c to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) PowerFLOW
+(Version________) 4.1c
+(Description_Fr_) PowerFLOW est une solution CFD (Computation Fluid Dynamics) révolutionnaire pour simuler parmi les plus complexes problèmes de dynamique 
+des fluides dans le monde.
+(Description_En_) PowerFLOW is a revolutionary CFD (Computation Fluid Dynamics) solution for simulating some of the world's most complex fluid flow 
+problems.
+(Website________) http://www.exa.com/pages/pflow/pflow_main.html
+(Authorship_____) EXA
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv		SYNOPSYS          	/software/apps/powerflow/4.1c
+prepend-path 	PATH		   	$env(SYNOPSYS)/bin
+setenv		EXA_QSYSTEM		sge
+setenv		EXA_QSYSTEM_BINDIR	/clumeq/ge/bin/lx24-amd64/
+setenv  	LM_LICENSE_FILE		27007@bishop
+setenv          EXA_LAMRSH              ssh
+

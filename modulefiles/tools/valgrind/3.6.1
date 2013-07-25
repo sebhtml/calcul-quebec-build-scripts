@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## Valgrind 3.6.1
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the valgrind instrumentation framework to your environment."
+}
+
+module-whatis "(Category_______) tools"
+module-whatis "(Name___________) valgrind"
+module-whatis "(Version________) 3.6.1"
+module-whatis "(Description_Fr_) Valgrind est un framework d'instrumentation d'analyse dynamique."
+module-whatis "(Description_En_) Valgrind is an instrumentation framework for building dynamic analysis tools."
+module-whatis "(Website________) http://valgrind.org/"
+module-whatis "(Authorship_____) http://valgrind.org/info/developers.html"
+module-whatis "(Compiler_______) gcc 4.1.2 (system compiler)"
+module-whatis "(Flags__________) ./configure --enable-tls --prefix=/software/tools/valgrind/3.6.1"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set          SYNOPSYS            /software/tools/valgrind/3.6.1
+
+prepend-path    PATH                $SYNOPSYS/bin
+prepend-path    MANPATH             $SYNOPSYS/share/man
+prepend-path    LD_LIBRARY_PATH     $SYNOPSYS/lib
+prepend-path    PKG_CONFIG_PATH     $SYNOPSYS/lib/pkgconfig
+prepend-path    C_INCLUDE_PATH      $SYNOPSYS/include

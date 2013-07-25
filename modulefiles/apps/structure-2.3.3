@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## Structure 2.3.3 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Structure 2.3.3 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Structure
+(Version________) 2.3.3
+(Description_Fr_) Structure est un logiciel pour l'utilisation de données de génotypage multilocus pour étudier la structure de 
+populations.
+(Description_En_) Structure is a software package for using multi-locus genotype data to investigate population structure.
+(Website________) http://pritch.bsd.uchicago.edu/structure.html
+(Authorship_____) Jonathan Pritchard & al
+(Compiler_______) gcc 4.4.2
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/apps/structure-2.3.3
+prepend-path       PATH              $env(SYNOPSYS)

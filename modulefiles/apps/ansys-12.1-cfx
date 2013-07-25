@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## Ansys 12.1 / HP-MPI modulefile
+##
+
+proc ModulesHelp { } {
+        puts stderr "\tAdds Ansys 12.1 CFX to environment paths\n"
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Ansys / HP-MPI
+(Version________) 12.1
+(Description_Fr_) Ansys est une suite logicielle dont les logiciels servent à la simulation en ingénierie. 
+(Description_En_) Ansys is a software bundle for advanced engineering simulations.
+(Website________) http://www.ansys.com/
+(Authorship_____) ANSYS
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv          SYNOPSYS        /software/apps/ansys121/v121/CFX
+set             mpiroot         /software/apps/ansys121/v121/CFX/tools/hpmpi-2.3/Linux-amd64
+setenv          MPI_ROOT        $mpiroot
+prepend-path    PATH            $env(SYNOPSYS)/bin
+prepend-path    PATH            $mpiroot/bin
+prepend-path    LD_LIBRARY_PATH $mpiroot/lib/linux_amd64
+prepend-path    MANPATH         $mpiroot/share/man

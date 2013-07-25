@@ -1,0 +1,27 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds mummer 3.23-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) mummer"
+module-whatis "(Version________) 3.23-1"
+module-whatis "(Description_Fr_) Alignement super rapide de longues séquences d'ADN et de protéines."
+module-whatis "(Description_En_) Ultra-fast alignment of large-scale DNA and protein sequences"
+module-whatis "(Website________) http://mummer.sourceforge.net/"
+module-whatis "(Authorship_____) MUMmer3.0 is a joint development effort by Stefan Kurtz of the University of Hamburg and Adam Phillippy, Art Delcher and Steven Salzberg at TIGR. "
+module-whatis "(Compiler_______) /usr/bin/gcc"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set                synopsys          /software/apps/mummer/3.23-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       PATH              $synopsys/
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

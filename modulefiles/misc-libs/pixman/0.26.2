@@ -1,0 +1,21 @@
+#%Module1.0
+#####################################################################
+##
+## Pixman
+##
+##
+proc ModulesHelp { } {
+       puts stderr "\tAdds the Pixman library to your environment  "
+}
+
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) Pixman"
+module-whatis "(Version________) 1.8"
+
+conflict misc-libs/pixman
+prereq load compilers/intel/12.0.4
+
+set                synopsys          /software/misc-libs/pixman/0.26.2
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig

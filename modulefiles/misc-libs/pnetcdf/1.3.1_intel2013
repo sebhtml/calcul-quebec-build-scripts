@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## Parallel netCDF 1.3.1
+##
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the Parallel netCDF version 1.3.1 library to your environment"
+}
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) Parallel netCDF"
+module-whatis "(Version________) 1.3.1"
+module-whatis "(Description_Fr_) Parallel netCDF (pnetCDF) est une librairie qui fournit des operations d’entree/sortie de haute performance tout en maintenant la compatibilite avec le format de fichier NetCDF cree par Unidata."
+module-whatis "(Description_En_) Parallel netCDF (PnetCDF) is a library providing high-performance I/O while still maintaining file-format compatibility with Unidata's NetCDF."
+module-whatis "(Website________) http://trac.mcs.anl.gov/projects/parallel-netcdf"
+module-whatis "(Authorship_____) Argone National Lab"
+module-whatis "(Compiler_______) Intel 2013"
+module-whatis "(Flags__________) -O3 -xHost -fPIC"
+module-whatis "(Dependencies___) compilers/intel/2013 mpi/openmpi/1.6.3_intel"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+prereq                                    compilers/intel/2013
+prereq                                    mpi/openmpi/1.6.3_intel
+set                 synopsys          /software/misc-libs/pnetcdf/1.3.1/intel2013/openmpi1.6.3
+prepend-path       LD_LIBRARY_PATH    $synopsys/lib
+prepend-path       C_INCLUDE_PATH     $synopsys/include
+prepend-path       CPLUS_INCLUDE_PATH     $synopsys/include
+prepend-path       PATH               $synopsys/bin
+prepend-path       MANPATH               $synopsys/man
+

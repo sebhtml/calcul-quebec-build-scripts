@@ -1,0 +1,34 @@
+#%Module1.0
+#####################################################################
+##
+## Dyninst 7.0 (GCC)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds Dyninst to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) Dyninst
+(Version________) 7.0
+(Description_Fr_) Interface de programmation pour la generation de code
+                  pendant l’exécution
+(Description_En_) API for runtime code generation
+(Website________) http://www.dyninst.org/
+(Authorship_____) Prof. Barton P. Miller research group, University of
+                  Wisconsin-Madison
+(Compiler_______) GCC 4.4.2
+(Flags__________) None
+(Dependencies___) GCC 4.4.2, Dwarf 20110612
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           misc-libs/dyninst
+prereq             compilers/gcc/4.4.2
+prereq             misc-libs/dwarf/20110612_gcc
+set                synopsys          /software/misc-libs/dyninst/7.0_gcc
+setenv             DYNINSTAPI_RT_LIB $synopsys/lib/libdyninstAPI_RT.so
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include

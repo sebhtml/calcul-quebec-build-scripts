@@ -1,0 +1,33 @@
+#%Module1.0
+#####################################################################
+##
+## Wine 1.2-rc2 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Wine 1.2-rc2 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Wine
+(Version________) 1.2-rc2
+(Description_Fr_) Wine est un programme	qui permet aux usagers de faire	rouler un programme de type Microsoft Windows sur d'autres 
+systèmes d'exploitations que Microsoft Windows.	Avec Wine, l'usager peut installer et faire rouler un programme	tout comme cela	se ferait 
+sous Microsoft Windows.
+(Description_En_) Wine is a software program that lets the user run Microsoft Windows software on other operating systems. With Wine, one
+can can install and run these applications just like they would on Microsoft Windows.
+(Website________) http://www.winehq.org/
+(Authorship_____) CodeWeavers, Bordeaux, TransGaming, Corel, Macadamian, Google	& al
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___)
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+setenv             SYNOPSYS          /software/apps/wine-1.2-rc2
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/man

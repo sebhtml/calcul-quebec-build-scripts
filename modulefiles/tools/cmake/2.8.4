@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## CMake 2.8.4
+## 
+##
+proc ModulesHelp { } { 
+    puts stderr "\tAdds CMake 2.8.4 to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) CMake
+(Version________) 2.8.4
+(Description_Fr_) Système de build multi-platforme.
+(Description_En_) Cross-platform, open-source build system.
+(Website________) http://www.cmake.org/
+(Authorship_____) Kitware, Inc.
+(Compiler_______) GCC 4.4.2
+(Flags__________) 
+(Dependencies___)
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv          SYNOPSYS          /software/tools/cmake/2.8.4
+prepend-path    PATH              $env(SYNOPSYS)/bin
+prepend-path    MANPATH           $env(SYNOPSYS)/man

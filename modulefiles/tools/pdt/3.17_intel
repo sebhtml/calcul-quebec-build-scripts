@@ -1,0 +1,40 @@
+#%Module1.0
+#####################################################################
+##
+## PDT 3.17 (Intel)
+##
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds PDT to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) PDT
+(Version________) 3.17
+(Description_Fr_) Program Database Toolkit, une plate-forme pour l’analyse de
+                  code supportant divers langages de programmation, et
+                  permettant aux développeurs d’outils d’analyse statiques et
+                  dynamiques d’accéder à une représentation riche d’un
+programme
+(Description_En_) Program database Toolkit framework for analyzing source code
+                  written in several programming languages and for making rich
+                  program knowledge accessible to developers of static and
+                  dynamic analysis tools
+(Website________) http://www.cs.uoregon.edu/research/tau/
+(Authorship_____) University of Oregon,
+                  Los Alamos National Laboratory,
+                  Jülich Research Centre
+(Compiler_______) Intel Compilers 11.1.059
+(Flags__________) None
+(Dependencies___) Intel Compilers 11.1.059
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           tools/pdt
+prereq             compilers/intel/11.1.059
+set                synopsys          /software/tools/pdt/3.17_intel/x86_64
+prepend-path       PATH              $synopsys/bin
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include

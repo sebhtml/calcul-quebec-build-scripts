@@ -1,0 +1,28 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds cufflinks/2.0.2-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps "
+module-whatis "(Name___________) cufflinks"
+module-whatis "(Version________) 2.0.2"
+module-whatis "(Description_Fr_) Cufflinks est un assembleur de transcriptomes."
+module-whatis "(Description_En_)  Cufflinks assembles transcripts, estimates their abundances, and tests for differential expression and regulation in RNA-Seq samples. It accepts aligned RNA-Seq reads and assembles the alignments into a parsimonious set of transcripts. Cufflinks then estimates the relative abundances of these transcripts based on how many reads support each one, taking into account biases in library preparation protocols. "
+module-whatis "(Website________) http://cufflinks.cbcb.umd.edu/"
+module-whatis "(Authorship_____) Cole Trapnell"
+module-whatis "(Compiler_______) /usr/bin/gcc"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+module load misc-libs/boost/1.53.0-1
+
+set                synopsys          /software/apps/cufflinks/2.0.2-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

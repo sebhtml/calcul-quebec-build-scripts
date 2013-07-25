@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## mono-2.6.1 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds mono-2.6.1 to your environment  "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Mono
+(Version________) 2.6.1
+(Description_Fr_) Une implémentation open source et multiplatforme de C# et de CLR dont les binaires sont compatibles avec Microsoft.NET
+(Description_En_) An open source, cross-platform, implementation of C# and the CLR that is binary compatible with Microsoft.NET
+(Website________) http://www.mono-project.com/Main_Page
+(Authorship_____) Novell (sponsor)
+(Compiler_______) gcc 4.4.2
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+#conflict compilers
+setenv             SYNOPSYS          /software/mono-2.6.1
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib 
+prepend-path       PATH              $env(SYNOPSYS)/bin 
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man
+

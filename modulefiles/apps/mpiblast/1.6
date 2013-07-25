@@ -1,0 +1,25 @@
+#%Module1.0
+proc ModulesHelp { } {
+    puts stderr "\tAdds mpiBLAST 1.6 to your environment"
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) mpiBLAST
+(Version________) 1.6
+(Description_Fr_) Implementation MPI de BLAST pour la genomique 
+(Description_En_) MPI implementation of BLAST for genomics
+(Website________) http://www.mpiblast.org/
+(Authorship_____) mpiblast.org
+(Compiler_______) compilers/intel/12.0.4
+(Flags__________) -O3 -xHOST  --enable-dlloader --enable-pthread -enable-MPI_Alloc_mem
+(Dependencies___) Intel Compilers 12.0.4
+                  OpenMPI 1.4.5
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+prereq         compilers/intel/12.0.4
+prereq         mpi/openmpi/1.4.5_intel
+set            synopsys /software/apps/mpiblast/1.6
+prepend-path   PATH             $synopsys/bin

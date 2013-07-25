@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## matplotlib
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds matplotlib to your Python environment."
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) matplotlib
+(Version________) 1.0.0_intel
+(Description_Fr_) matplotlib est un module Python de génération de graphes 2D qui produit des figures de haute qualité dans une variété de formats.
+(Description_En_) matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
+(Website________) http://matplotlib.sourceforge.net/
+(Authorship_____) John Hunter, Darren Dale, Michael Droettboom
+(Compiler_______) icc 11.1.059
+(Flags__________)
+(Dependencies___) Python 2.6, Intel C Compiler 11.1.059, NumPy, libpng 1.4.0
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+prereq                               apps/python-2.6.4
+prereq                               compilers/intel/11.1.059
+prereq                               misc-libs/numpy/1.4.1_intel
+prereq                               misc-libs/libpng/1.4.0
+setenv             SYNOPSYS          /software/misc-libs/matplotlib/1.0.0_intel
+prepend-path       PYTHONPATH        $env(SYNOPSYS)/lib/python2.6/site-packages  
+

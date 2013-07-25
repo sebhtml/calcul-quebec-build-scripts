@@ -1,0 +1,29 @@
+#%Module1.0
+#####################################################################
+##
+## Go compiler
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the go compiler to your environment  "
+}
+
+module-whatis "
+(Category_______) compilers
+(Name___________) Go
+(Version________) r60
+(Description_Fr_) Le compilateur Go de Google.
+(Description_En_) The Go compiler from Google.
+(Website________) http://golang.org/
+(Authorship_____) Google
+(Compiler_______) GCC 4.6.1
+(Flags__________)
+(Dependencies___) GCC 4.6.1
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+set             synopsys    /software/compilers/go/r60
+setenv          GOROOT      $synopsys 
+setenv          GO_SRC      $synopsys/src
+prepend-path    PATH        $synopsys/bin

@@ -1,0 +1,29 @@
+#%Module1.0
+#####################################################################
+##
+## netcdf-4.0.1 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the netcdf 4.0.1 library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) NetCDF
+(Version________) 4.0.1
+(Description_Fr_) NetCDF (network Common Data Form) est un ensemble de librairies et de formats de données indépendants de la machine, 
+qui supporte la création, l'accès, et le partage de données scientifiques vectorisées.
+(Description_En_) NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the 
+creation, access, and sharing of array-oriented scientific data.
+(Website________) http://www.unidata.ucar.edu/software/netcdf/
+(Authorship_____) Unidata
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/netcdf-4.0.1
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib

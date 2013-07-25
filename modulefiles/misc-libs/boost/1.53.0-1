@@ -1,0 +1,29 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds boost/1.53.0-1 to your environment  "
+}
+
+module-whatis "(Category_______) misc-libs "
+module-whatis "(Name___________) boost"
+module-whatis "(Version________) 1.53.0"
+module-whatis "(Description_Fr_) Boost est une librairie C++ gratuite et libre relue par les paires."
+module-whatis "(Description_En_) Boost provides free peer-reviewed portable C++ source libraries."
+module-whatis "(Website________) http://www.boost.org/"
+module-whatis "(Authorship_____) Original founders of Boost still active in the community include Beman Dawes and David Abrahams."
+module-whatis "(Compiler_______) /usr/bin/gcc"
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+
+
+set                synopsys          /software/misc-libs/boost/1.53.0-1
+setenv             BOOST_ROOT        $synopsys
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

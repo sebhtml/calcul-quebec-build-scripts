@@ -1,0 +1,28 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds readline 6.2-1 to your environment  "
+}
+
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) readline"
+module-whatis "(Version________) 6.2-1"
+module-whatis "(Description_Fr_) "
+module-whatis "(Description_En_)  The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in."
+module-whatis "(Website________) http://www.gnu.org/software/readline/"
+module-whatis "(Authorship_____) "
+module-whatis "(Compiler_______) "
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set                synopsys          /software/misc-libs/readline/6.2-1
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       LIBRARY_PATH      $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       CPLUS_INCLUDE_PATH  $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+prepend-path       PKG_CONFIG_PATH   $synopsys/lib/pkgconfig
+prepend-path       PKG_CONFIG_PATH   $synopsys/share/pkgconfig

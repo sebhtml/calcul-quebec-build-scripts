@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## netcdf-3.6.3 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the netcdf 3.6.3 library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) NetCDF
+(Version________) 3.6.3
+(Description_Fr_) NetCDF (network Common Data Form) est un ensemble de librairies et de formats de données indépendants de la machine, qui supporte la création, l'accès, et le partage de données scientifiques vectorisées.
+(Description_En_) NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the 
+creation, access, and sharing of array-oriented scientific data.
+(Website________) http://www.unidata.ucar.edu/software/netcdf/
+(Authorship_____) Unidata
+(Compiler_______) Intel
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/misc-libs/netcdf-3.6.3_intel
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

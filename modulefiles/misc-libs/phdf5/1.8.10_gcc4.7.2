@@ -1,0 +1,29 @@
+#%Module1.0
+#####################################################################
+##
+## Parallel HDF5
+##
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the HDF5 library to your environment."
+}
+
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) hdf5"
+module-whatis "(Version________) 1.8.10"
+module-whatis "(Description_Fr_) HDF5 est une modèle de données, une librairie et un format de fichiers pour stocker et gérer des données. Ce modèle de données supporte une quantité illimitée de type de données et a été conçu pour des transferts efficaces et pour un haut débit de données complexes."
+module-whatis "(Description_En_) HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data."
+module-whatis "(Website________) http://www.hdfgroup.org/HDF5/"
+module-whatis "(Authorship_____) The HDF Group"
+module-whatis "(Compiler_______) icc 2013"
+module-whatis "(Flags__________) CC=mpicc FC=mpif90 ./configure --prefix=/software/misc-libs/phdf5/1.8.10/gcc4.7.2/openmpi1.6.3 --enable-fortran CFLAGS=-O3 -march=native -fPIC FFLAGS=-O3 -march=native -fPIC FCFLAGS=-O3 -march=native -fPIC"
+module-whatis "(Dependencies___) compilers/gcc/4.7.2 mpi/openmpi/1.6.3_gcc"
+
+prereq                                    compilers/gcc/4.7.2
+prereq                                    mpi/openmpi/1.6.3_gcc
+set                 synopsys           /software/misc-libs/phdf5/1.8.10/gcc4.7.2/openmpi1.6.3
+prepend-path       LD_LIBRARY_PATH    $synopsys/lib
+prepend-path       LIBRARY_PATH    $synopsys/lib
+prepend-path       C_INCLUDE_PATH     $synopsys/include
+prepend-path       CPLUS_INCLUDE_PATH     $synopsys/include
+prepend-path       PATH               $synopsys/bin

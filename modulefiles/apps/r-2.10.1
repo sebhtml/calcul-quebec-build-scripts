@@ -1,0 +1,35 @@
+#%Module1.0
+#####################################################################
+##
+## R 2.10.1
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds R 2.10.1 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) R
+(Version________) 2.10.1
+(Description_Fr_) R est un langage et un environnement pour le calcul de statistiques et de graphiques. Il offre une grande variété de techniques 
+statistiques (modélisation linéaire et non-linéaire, tests statistiques classiques, analyse de séries en temps, classification, 
+clustering) et graphiques, et est très extensible.
+(Description_En_) R is a language and environment for statistical computing and graphics. It provides a wide variety of statistical (linear and nonlinear 
+modelling, classical statistical tests, time-series analysis, classification, clustering, ...) and graphical techniques, and is highly extensible.
+(Website________) http://www.r-project.org/ 
+(Authorship_____) R-Project
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+prereq load compilers/gcc/4.4.2
+
+setenv             SYNOPSYS          /software/apps/R-2.10.1
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

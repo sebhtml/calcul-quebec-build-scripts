@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## PETSC lib
+##
+##
+proc ModulesHelp { } {
+      puts stderr "\tAdds the petsc library to your environment  "
+}
+module-whatis "
+	(Category_______) misc-libs
+	(Name___________) PETSC
+	(Version________) 3.2-p7
+	(Description_Fr_) PETSc (Portable, Extensible Toolkit for Scientific Computation), prononcé PET-see (le S est silencieux), est une suite de structures de données et de routines pour une solution évolutive (parallèle) d'applications scientifiques modelées par des équations différencielles partielles. Elle emploie le standard MPI pour le parallélisme.
+	(Description_En_) PETSc (Portable, Extensible Toolkit for Scientific Computation), pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations.  It employs the MPI standard for parallelism.
+	(Website________) http://www.mcs.anl.gov/petsc/petsc-as/
+	(Authorship_____) (PETSc authors) Barry, Satish, Matt, Hong, Jed, Victor, Dmitry, Lisandro & al.
+	(Compiler_______)
+	(Flags__________) See installation doc.
+	(Dependencies___) Compilateur ICC 12.0.4, mpi/openmpi/1.4.5_intel, mkl 10.3.4
+	(Notes_Fr_______)
+	(Notes_En_______)
+"
+prereq 			compilers/intel/12.0.4
+prereq 			mpi/openmpi/1.4.5_intel
+prereq 			blas-libs/mkl/10.3.4
+set 	            	SYNOPSYS          /software/misc-libs/petsc/3.2-p7_intel12_2
+setenv             	PETSC_DIR         $SYNOPSYS
+prepend-path 		PATH              $SYNOPSYS/bin
+prepend-path 		LD_LIBRARY_PATH   $SYNOPSYS/lib
+prepend-path 		C_INCLUDE_PATH    $SYNOPSYS/include
+

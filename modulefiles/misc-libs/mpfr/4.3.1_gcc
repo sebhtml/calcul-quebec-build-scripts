@@ -1,0 +1,29 @@
+#%Module1.0
+#####################################################################
+##
+## MPFR lib 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the gmp library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) MPFR
+(Version________) 2.4.1
+(Description_Fr_) La librairie MPFR est une librairie en C pour les calculs en à point flottant de précision multiple, avec arrondissage correct.
+(Description_En_) The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.
+(Website________) http://www.mpfr.org/
+(Authorship_____) GNU
+(Compiler_______) gcc 4.4.2
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/mpfr-2.4.1_gcc
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+

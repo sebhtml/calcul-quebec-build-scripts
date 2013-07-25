@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+#### ImageMagick 6.6.7-4_gcc
+## 
+##
+proc ModulesHelp { } {
+    puts stderr "\tAdds the ImageMagick library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) ImageMagick
+(Version________) 6.6.7-4
+(Description_Fr_) ImageMagick est un rassemblement de logiciels et de libraries pour manipuler des images.
+(Description_En_) ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats
+(Website________) http://www.imagemagick.org/script/index.php
+(Authorship_____) 
+(Compiler_______) GCC 4.4.2
+(Flags__________) 
+(Dependencies___) GCC 4.4.2, libpng 1.4.0
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+prereq             compilers/gcc/4.4.2
+prereq             misc-libs/libpng/1.4.0
+
+setenv             SYNOPSYS          /software/misc-libs/ImageMagick/6.6.7-4_gcc
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MAN_PATH          $env(SYNOPSYS)/share/man

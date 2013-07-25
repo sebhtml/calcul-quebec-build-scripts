@@ -1,0 +1,32 @@
+#%Module1.0
+#####################################################################
+##
+## Boost C++ Libraries
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds Boost C++ Libraries to your environment."
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) boost
+(Version________) 1.44.0_intel
+(Description_Fr_) Boost est une collection de libraires C++ portables, gratuites et révisées par la communauté.
+(Description_En_) Boost provides free peer-reviewed portable C++ source libraries. Boost emphasize libraries that work well with the C++ Standard Library. Boost libraries are intended to be widely useful, and usable across a broad spectrum of applications.
+(Website________) http://software.intel.com/en-us/intel-compilers/
+(Authorship_____) Boost Community
+(Compiler_______) icc 11.1.059
+(Flags__________)
+(Dependencies___) Intel C Compiler 11.1.059, Open MPI 1.4.3 (Intel)
+(Notes_Fr_______) Cette version exclut le module Boost.Python.
+(Notes_En_______) This version does NOT come with Boost.Python module.
+"
+
+#prereq                                   compilers/intel/11.1.059
+#prereq                                   compilers/intel
+#prereq                                   mpi/openmpi/1.4.3_intel
+setenv             SYNOPSYS              /software/misc-libs/boost/1.44.0_intel
+prepend-path       CPLUS_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       LD_LIBRARY_PATH       $env(SYNOPSYS)/lib
+

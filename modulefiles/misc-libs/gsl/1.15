@@ -1,0 +1,33 @@
+#%Module1.0
+#####################################################################
+##
+## GNU Scientific Library
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the GNU Scientific Library to your environment."
+}
+
+module-whatis "(Category_______) misc-libs"
+module-whatis "(Name___________) gsl"
+module-whatis "(Version________) 1.15"
+module-whatis "(Description_Fr_) La GNU Scientific Library (GSL) est une bibliothèque de calcul numérique pour C et C++. Elle offre un large éventail de routines mathématiques telles que des générateurs de nombres aléatoires, des fonctions spéciales et des méthodes d'ajustement par moindre carrées. Elle fournit plus de 1000 fonctions accompagnée d'une suite de tests étendus."
+module-whatis "(Description_En_) The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers. The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. There are over 1000 functions in total with an extensive test suite."
+module-whatis "(Website________) http://www.gnu.org/software/gsl/"
+module-whatis "(Authorship_____) Intel"
+module-whatis "(Compiler_______) compilers/gcc/4.6.1"
+module-whatis "(Flags__________) -O3 -march=core2 -ffast-math"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+set  	            SYNOPSYS           /software/misc-libs/gsl/1.15_gcc
+prepend-path       LIBRARY_PATH    $SYNOPSYS/lib
+prepend-path       LD_LIBRARY_PATH    $SYNOPSYS/lib
+prepend-path       C_INCLUDE_PATH     $SYNOPSYS/include
+prepend-path       CPLUS_INCLUDE_PATH $SYNOPSYS/include
+prepend-path       PATH               $SYNOPSYS/bin
+prepend-path       MANPATH            $SYNOPSYS/share/man
+prepend-path       INFOPATH           $SYNOPSYS/share/info
+prepend-path       ACLOCAL_PATH       $SYNOPSYS/share/aclocal
+

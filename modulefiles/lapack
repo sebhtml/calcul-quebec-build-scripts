@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## Lapack 3.2.1
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the lapack library to your environment  "
+}
+
+module-whatis "
+(Category_______) blas-libs
+(Name___________) Lapack
+(Version________) 3.2.1
+(Description_Fr_) LAPACK (Linear Algebra PACKage) est écrit en Fortran90 et fournit des routines pour la résolution de systèmes 
+d'équations linéaires simultanées, des solutions par moindres carrés pour des systèmes d'équations linéaires, trouver les valeurs propres 
+et les vecteurs propres de matrices, la décomposition en valeurs singulières (SVD), etc.
+(Description_En_) LAPACK (Linear Algebra PACKage) is written in Fortran90 and provides routines for solving systems of simultaneous 
+linear equations, least-squares solutions of linear systems of equations, eigenvalue problems, and singular value problems.
+(Website________) http://www.netlib.org/lapack/
+(Authorship_____) netlib
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/lapack
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH   $env(SYNOPSYS)/include

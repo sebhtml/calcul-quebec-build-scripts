@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## Python 2.6.4 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds Python 2.6.4 to your environment  "
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) Python
+(Version________) 2.6.4
+(Description_Fr_) Python est un langage de programmation dynamique d'une puissance remarquable, dont la fourchette de domaines d'application est très large.
+(Description_En_) Python is a remarkably powerful dynamic programming language that is used in a wide variety of application domains.
+(Website________) http://www.python.org/
+(Authorship_____) Python Software Foundation
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/apps/Python-2.6.4
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

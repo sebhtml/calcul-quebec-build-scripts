@@ -1,0 +1,47 @@
+#%Module1.0
+#####################################################################
+##
+## MKL library
+## 
+##
+proc ModulesHelp { } {
+   puts stderr "\tAdds MKL (Intel Math Kernel Libraries) to your environment  "
+}
+
+module-whatis "
+(Category_______) blas-libs
+(Name___________) MKL
+(Version________) 11.0
+(Description_Fr_) Intel® Math Kernel Library (Intel® MKL) est une librairie the routines mathématiques hautement optimisées et extensivement 
+parallélisées pour les sciences, l'ingénierie et les applications financières qui requiert un maximum de performance. Le coeur des fonctions 
+disponibles incluent BLAS, LAPACK, ScaLAPACK, résolveurs de systèmes matriciels creux, transformées de Fourier, mathématiques vectorielles, et plus.
+(Description_En_) Intel® Math Kernel Library (Intel® MKL) is a library of highly optimized, extensively threaded math routines for science, 
+engineering, and financial applications that require maximum performance. Core math functions include BLAS, LAPACK, ScaLAPACK, Sparse Solvers, Fast 
+Fourier Transforms, Vector Math, and more.
+(Website________) http://software.intel.com/en-us/intel-mkl/
+(Authorship_____) Intel 
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict     blas-libs
+set          CPRO_PATH       /software/intel/composer_xe_2013
+set          MKLROOT         $CPRO_PATH/mkl
+set          MKL_TARGET_ARCH intel64
+
+setenv       MKLROOT         $MKLROOT
+setenv       INTEL_LICENSE_FILE 28518@10.225.3.14
+
+prepend-path    PATH               $MKLROOT/tools
+prepend-path    LD_LIBRARY_PATH    $MKLROOT/lib/$MKL_TARGET_ARCH 
+prepend-path    LD_LIBRARY_PATH    $CPRO_PATH/lib/$MKL_TARGET_ARCH 
+prepend-path    LIBRARY_PATH       $MKLROOT/lib/$MKL_TARGET_ARCH 
+prepend-path    LIBRARY_PATH       $CPRO_PATH/lib/$MKL_TARGET_ARCH 
+prepend-path    NLSPATH            $MKLROOT/lib/$MKL_TARGET_ARCH/locale/%l_%t/%N
+prepend-path    MANPATH            $CPRO_PATH/man/en_US
+prepend-path    INCLUDE            $MKLROOT/include
+prepend-path    C_INCLUDE_PATH     $MKLROOT/include
+prepend-path    CPATH              $MKLROOT/include

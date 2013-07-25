@@ -1,0 +1,27 @@
+#%Module1.0
+#####################################################################
+##
+## make 3.82
+## 
+##
+proc ModulesHelp { } { 
+    puts stderr "\tAdds make 3.82 to your environment  "
+}
+
+module-whatis "(Category_______) tools"
+module-whatis "(Name___________) make"
+module-whatis "(Version________) 3.82"
+module-whatis "(Description_Fr_) Outils de construction"
+module-whatis "(Description_En_) Build system"
+module-whatis "(Website________) http://www.gnu.org/software/make/"
+module-whatis "(Authorship_____) Free Software Foundation, Inc."
+module-whatis "(Compiler_______) gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-51)"
+module-whatis "(Flags__________) ./configure --prefix=/software/tools/make/3.82"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______) "
+module-whatis "(Notes_En_______) "
+
+set	SYNOPSYS          /software/tools/make/3.82
+prepend-path    PATH              $SYNOPSYS/bin
+prepend-path    MANPATH           $SYNOPSYS/share/man
+prepend-path    INFO	$SYNOPSYS/share/info

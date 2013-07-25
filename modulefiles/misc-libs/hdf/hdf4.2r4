@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## hdf4.2r4 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the hdf4.2r4 library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) Hierarchical Data Format (HDF)
+(Version________) 4.2r4
+(Description_Fr_) HDF est une suite technologique unique qui rend possible la gestion de collections de données extrêmement larges et complexes.
+(Description_En_) HDF is a unique technology suite that makes possible the management of extremely large and complex data collections.
+(Website________) http://www.hdfgroup.org/
+(Authorship_____) HDF Group
+(Compiler_______) gcc
+(Flags__________) CPPFLAGS='-O3 -xHOST' CFLAGS='-O3 -xHOST' ./configure --prefix=/software/misc-libs/HDF4.2r4
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/misc-libs/HDF4.2r4
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man

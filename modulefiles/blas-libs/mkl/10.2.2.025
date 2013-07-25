@@ -1,0 +1,36 @@
+#%Module1.0
+#####################################################################
+##
+## MKL library
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds MKL (Intel Math Kernel Libraries) to your environment  "
+}
+
+module-whatis "
+(Category_______) blas-libs
+(Name___________) MKL
+(Version________) 10.2.2.025
+(Description_Fr_) Intel® Math Kernel Library (Intel® MKL) est une librairie the routines mathématiques hautement optimisées et extensivement 
+parallélisées pour les sciences, l'ingénierie et les applications financières qui requiert un maximum de performance. Le coeur des fonctions 
+disponibles incluent BLAS, LAPACK, ScaLAPACK, résolveurs de systèmes matriciels creux, transformées de Fourier, mathématiques vectorielles, et plus.
+(Description_En_) Intel® Math Kernel Library (Intel® MKL) is a library of highly optimized, extensively threaded math routines for science, 
+engineering, and financial applications that require maximum performance. Core math functions include BLAS, LAPACK, ScaLAPACK, Sparse Solvers, Fast 
+Fourier Transforms, Vector Math, and more.
+(Website________) http://software.intel.com/en-us/intel-mkl/
+(Authorship_____) Intel 
+(Compiler_______) 
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+conflict           blas-libs
+setenv             SYNOPSYS          /software/intel/mkl/10.2.2.025
+setenv             MKL               $env(SYNOPSYS)
+setenv             INTEL_LICENSE_FILE 28518@10.225.3.14
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib/em64t
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path	   MANPATH	     $env(SYNOPSYS)/man/en_US

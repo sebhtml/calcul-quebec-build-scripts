@@ -1,0 +1,164 @@
+#%Module1.0
+#####################################################################
+##
+## OpenFOAM
+##
+##
+proc ModulesHelp { } { 
+        puts stderr "\tAdds OpenFOAM 2.1.0 and libscotch to your environment."
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) OpenFOAM
+(Version________) 2.1.0
+(Description_Fr_) OpenFOAM (Open Field Operation and Manipulation) CFD Toolbox
+est un logiciel libre produit par l'enreprise OpenCFD Ltd. Il a une large base
+d'utilisateurs qui couvre la plupart des domaines de l'ingéniérie pour un usage
+commercial ou académique. OpenFOAM a de nombreuses fonctionnalités allant de
+la mécanique des fluides prenant en compte des réactions chimiques, turbulences
+et transferts thermiques à la mécanique des solides et l'électromagnétique.
+(Description_En_) The OpenFOAM (Open Field Operation and Manipulation) CFD 
+Toolbox is a free, open source CFD software package produced by a commercial
+company, OpenCFD Ltd. It has a large user base across most areas of engineering
+and science, from both commercial and academic organisations. OpenFOAM has an
+extensive range of features to solve anything from complex fluid flows
+involving chemical reactions, turbulence and heat transfer, to solid dynamics
+and electromagnetics.
+(Website________) http://www.openfoam.com
+(Authorship_____) OpenCFD
+(Compiler_______) ICC 12.0.4
+(Flags__________) -m64 -03
+(Dependencies___) compilers/intel/12.0.4 mpi/openmpi/1.4.5_intel
+(Notes_Fr_______) Le paquet de source n'est pas fait pour être optimisé sur
+l'hôte selon ses capacités (flags de compilation codés en dur). Les parties du
+logiciel se servant de X/Qt/etc (ThirdParty) ne sont pas présentes dans cette
+installation. Certaines variables ne sont pas définies par ce module par souci
+de cohérence sur des répertoires qui pourrait ne pas exister, par exemple,
+les répertoires utilisateurs et site. Voir la page wiki du CLUMEQ à ce sujet
+https://www.clumeq.ca/wiki/index.php/OpenFoam
+(Notes_En_______) The source package isn't properly packaged to allow
+optimization on the host machine (hardcoded compilation flags). Software parts
+that require X/Qt/etc (ThirdParty) aren't available in this build. For sake
+of consistancy, some environment variables are not defined by this module 
+since some directories might not exist, for example, user and site directories.
+See the CLUMEQ wiki page about OpenFOAM
+https://www.clumeq.ca/wiki/index.php/OpenFoam
+"
+
+prereq                                   compilers/intel/12.0.4
+prereq                                   mpi/openmpi/1.4.5_intel
+set                synopsys              /software/apps/openfoam/2.1.0_intel
+
+# Environment variables set in etc/bashrc
+set                wm_project            OpenFOAM
+setenv             WM_PROJECT            OpenFOAM
+set                wm_project_version    2.1.0
+setenv             WM_PROJECT_VERSION    2.1.0
+setenv             FOAM_INST_DIR         $synopsys
+set                wm_compiler           Icc
+setenv             WM_COMPILER           Icc
+setenv             WM_ARCH_OPTION        64
+set                wm_precision_option   DP
+setenv             WM_PRECISION_OPTION   DP
+set                wm_compile_option     Opt
+setenv             WM_COMPILE_OPTION     Opt
+setenv             WM_MPLIB              SYSTEMOPENMPI
+setenv             WM_OSTYPE             POSIX
+setenv             FOAM_SIGFPE           ""
+setenv             WM_PROJECT_INST_DIR   $synopsys
+set                wm_project_dir        $synopsys/$wm_project-$wm_project_version
+setenv             WM_PROJECT_DIR        $synopsys/$wm_project-$wm_project_version
+set                wm_third_party_dir    $synopsys/ThirdParty-2.1.0
+setenv             WM_THIRD_PARTY_DIR    $synopsys/ThirdParty-2.1.0
+#set                wm_project_user_dir   $env(HOME)/$wm_project/$env(USER)-$wm_project_version
+#setenv             WM_PROJECT_USER_DIR   $env(HOME)/$wm_project/$env(USER)-$wm_project_version
+
+# Environment variables set in etc/config/settings.sh
+set                wm_arch               linux64
+setenv             WM_ARCH               linux64
+setenv             WM_COMPILER_LIB_ARCH  64
+setenv             WM_CC                 gcc
+setenv             WM_CXX                g++
+setenv             WM_CFLAGS             "-m64 -fPIC"
+setenv             WM_CXXFLAGS           "-m64 -fPIC"
+setenv             WM_LDFLAGS            "-m64"
+setenv             FOAM_JOB_DIR          $synopsys/jobControl
+set                wm_dir                $wm_project_dir/wmake
+setenv             WM_DIR                $wm_project_dir/wmake
+setenv             WM_LINK_LANGUAGE      "c++"
+set                wm_options            $wm_arch$wm_compiler$wm_precision_option$wm_compile_option
+setenv             WM_OPTIONS            $wm_arch$wm_compiler$wm_precision_option$wm_compile_option
+set                platform_dir          $wm_project_dir/platforms/$wm_options
+set                foam_appbin           $platform_dir/bin
+setenv             FOAM_APPBIN           $platform_dir/bin
+set                foam_libbin           $platform_dir/lib
+setenv             FOAM_LIBBIN           $platform_dir/lib
+set                foam_ext_libbin       $wm_third_party_dir/platforms/$wm_options/lib
+setenv             FOAM_EXT_LIBBIN       $wm_third_party_dir/platforms/$wm_options/lib
+#set                foam_site_dir         $synopsys/site/$wm_project_version/platforms/$wm_options
+#set                foam_site_appbin      $foam_site_dir/bin
+#setenv             FOAM_SITE_APPBIN      $foam_site_dir/bin
+#set                foam_site_libbin      $foam_site_dir/lib
+#setenv             FOAM_SITE_LIBBIN      $foam_site_dir/lib
+#set                foam_usr_dir          $wm_project_user_dir/platforms/$wm_options
+#set                foam_user_appbin      $foam_usr_dir/bin
+#setenv             FOAM_USER_APPBIN      $foam_usr_dir/bin
+#set                foam_user_libbin      $foam_usr_dir/lib
+#setenv             FOAM_USER_LIBBIN      $foam_usr_dir/lib
+set                foam_app              $wm_project_dir/applications
+setenv             FOAM_APP              $wm_project_dir/applications
+set                foam_src              $wm_project_dir/src
+setenv             FOAM_SRC              $wm_project_dir/src
+set                foam_tutorials        $wm_project_dir/tutorials
+setenv             FOAM_TUTORIALS        $wm_project_dir/tutorials
+set                foam_utilities        $foam_app/utilities
+setenv             FOAM_UTILITIES        $foam_app/utilities
+set                foam_solvers          $foam_app/solvers
+setenv             FOAM_SOLVERS          $foam_app/solvers
+#set                foam_run              $wm_project_user_dir/run
+#setenv             FOAM_RUN              $wm_project_user_dir/run
+set                foam_mpi              openmpi-system
+setenv             FOAM_MPI              openmpi-system
+#setenv             PINC                  "-I/software/MPI/openmpi/1.4.5_intel/include -pthread"
+#setenv             PLIBS                 "-pthread -L/opt/torque/lib -Wl,--rpath -Wl,/opt/torque/lib -L/software/apps/blcr/0.8.4/lib -L/software/MPI/openmpi/1.4.5_intel/lib -lmpi -lopen-rte -lopen-pal -lrdmacm -libverbs -ltorque -lnsl -lutil -lcr -ldl -Wl,--export-dynamic -lnsl -lutil"
+#setenv             MPI_ARCH_PATH         /software/MPI/openmpi/1.4.5_intel
+setenv             MPI_BUFFER_SIZE       20000000
+
+# Aliases defined by etc/config/aliases.sh
+set-alias          wmSET                 ". $wm_project_dir/etc/bashrc"
+set-alias          wm64                  "wmSET WM_ARCH_OPTION=64"
+set-alias          wm32                  "wmSET WM_ARCH_OPTION=32"
+set-alias          wmSP                  "wmSET WM_PRECISION_OPTION=SP"
+set-alias          wmDP                  "wmSET WM_PRECISION_OPTION=DP"
+set-alias          wmUNSET               ". $wm_project_dir/etc/config/unset.sh"
+set-alias          wmSchedON             "export WM_SCHEDULER=$wm_project_dir/wmake/wmakeScheduler"
+set-alias          wmSchedOFF            "unset WM_SCHEDULER"
+set-alias          foamPV                ". $wm_project_dir/etc/config/paraview.sh ParaView_VERSION=\$1"
+set-alias          src                   "cd $foam_src"
+set-alias          lib                   "cd $foam_libbin"
+#set-alias          run                   "cd $foam_run"
+set-alias          foam                  "cd $wm_project_dir"
+set-alias          foamsrc               "cd $foam_src/$wm_project"
+set-alias          foamfv                "cd $foam_src/finiteVolume"
+set-alias          app                   "cd $foam_app"
+set-alias          util                  "cd $foam_utilities"
+set-alias          sol                   "cd $foam_solvers"
+set-alias          tut                   "cd $foam_tutorials"
+set-alias          foamApps              "cd $foam_app"
+set-alias          foamSol               "cd $foam_solvers"
+set-alias          foamTuts              "cd $foam_tutorials"
+set-alias          foamUtils             "cd $foam_utilities"
+set-alias          foam3rdParty          "cd $wm_third_party_dir"
+set-alias          foamSite              "cd $synopsys/site"
+
+# Uncomment next two line and comment second two next
+# if using foam_site_dir and foam_usr_dir
+#prepend-path       PATH                  $foam_user_appbin:$foam_site_appbin:$foam_appbin:$wm_project_dir/bin:$wm_dir
+#prepend-path       LD_LIBRARY_PATH       $foam_user_libbin:$foam_site_libbin:$foam_libbin:$foam_ext_libbin:$foam_libbin/dummy
+prepend-path       PATH                  $foam_appbin:$wm_project_dir/bin:$wm_dir
+prepend-path       LD_LIBRARY_PATH       $foam_libbin/$foam_mpi:$foam_ext_libbin/$foam_mpi:$foam_libbin:$foam_ext_libbin:$foam_libbin/dummy
+prepend-path       MANPATH               $wm_third_party_dir/scotch_5.1.11/man
+
+# Adds an environment variable to the etc directory
+setenv             OPENFOAM_ETC          $wm_project_dir/etc

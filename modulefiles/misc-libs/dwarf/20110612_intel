@@ -1,0 +1,31 @@
+#%Module1.0
+#####################################################################
+##
+## Dwarf 20110612 (Intel)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds Dwarf to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) Dwarf
+(Version________) 20110612
+(Description_Fr_) Outils et bibliothèque pour le format de débogage DWARF
+(Description_En_) Tools and library for the DWARF debugging data format
+(Website________) http://reality.sgiweb.org/davea/dwarf.html
+(Authorship_____) SGI, David A.
+(Compiler_______) Intel Compilers 11.1.059
+(Flags__________) -O2 (and -fPIC for the library)
+(Dependencies___) Intel Compilers 11.1.059
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           misc-libs/dwarf
+set                synopsys          /software/misc-libs/dwarf/20110612_intel
+prepend-path       LD_LIBRARY_PATH   $synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man

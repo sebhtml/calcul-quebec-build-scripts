@@ -1,0 +1,30 @@
+#%Module1.0
+proc ModulesHelp { } {
+    puts stderr "\tAdds Ray 2.1.0 to your environment"
+}
+
+module-whatis "(Category_______) apps"
+module-whatis "(Name___________) Ray"
+module-whatis "(Version________) 2.1.0"
+module-whatis "(Description_Fr_) Ray est un assembleur de genomes paralleles"
+module-whatis "                  utilisant une interface de type" 
+module-whatis "                  message-passing et etant implemente avec" 
+module-whatis "                  des communications pair-a-pair."
+module-whatis "(Description_En_) Ray is a parallel de novo genome assembler"
+module-whatis "                  that utilises the message-passing interface"
+module-whatis "                  everywhere and is implemented using"
+module-whatis "                  peer-to-peer communication."
+module-whatis "(Website________) http://denovoassembler.sourceforge.net/"
+module-whatis "(Authorship_____) Sebastien Boisvert"
+module-whatis "(Compiler_______) compilers/gcc/4.7.2"
+module-whatis "(Flags__________) -O3 -Wall -std=c++98 -D MAXKMERLENGTH=32 HAVE_LIBZ=y HAVE_LIBBZ2=y"
+module-whatis "(Dependencies___) compilers/gcc/4.7.2"
+module-whatis "              	   mpi/openmpi/1.6.3_gcc"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+prereq         compilers/gcc/4.7.2
+prereq         mpi/openmpi/1.6.3_gcc
+
+set            synopsys         /software/apps/ray/2.1.0
+prepend-path   PATH             $synopsys

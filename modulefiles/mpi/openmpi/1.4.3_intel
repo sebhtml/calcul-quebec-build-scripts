@@ -1,0 +1,37 @@
+#%Module1.0
+#####################################################################
+##
+## OPENMPI MPI lib 
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the OpenMPI library to your environment. "
+}
+
+module-whatis "
+(Category_______) mpi
+(Name___________) OpenMPI
+(Version________) 1.4.3
+(Description_Fr_) Le projet 'Open MPI' est une implémentation libre MPI-2 qui est développée et maintenue par un consortium de partenaires académiques, de recherche et de l'industrie. 'Open MPI' est donc en mesure de combiner l'expertise, les technologies et les ressources de toute la communauté de calcul de haute performance dans le but de bâtir la meilleure librairie MPI disponible.
+(Description_En_) The Open MPI Project is an open source MPI-2 implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available.
+(Website________) http://www.open-mpi.org/
+(Authorship_____) The Open MPI Team
+(Compiler_______) icc 11.1.059
+(Flags__________) CFLAGS='-O3 -xHOST' ./configure --prefix=/software/MPI/openmpi-1.4.3-tm_intel-1 --with-sge --with-threads --enable-mpi-threads --enable-orterun-prefix-by-default --with-openib --enable-shared --enable-static
+(Dependencies___) Intel Compiler 11.1.059
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict                             mpi
+prereq load compilers/intel/11.1.059
+set                synopsys          /software/MPI/openmpi-1.4.3-tm_intel-1
+set                blcr_synopsys       /software/apps/blcr/0.8.4
+prepend-path       PATH                $synopsys/bin:$blcr_synopsys/bin
+prepend-path       LD_LIBRARY_PATH     $synopsys/lib:/opt/torque/lib:$blcr_synopsys/lib
+prepend-path       C_INCLUDE_PATH    $synopsys/include
+prepend-path       CXX_INCLUDE_PATH    $synopsys/include
+prepend-path       CPP_INCLUDE_PATH    $synopsys/include
+prepend-path       CPLUS_INCLUDE_PATH  $synopsys/include
+prepend-path       MANPATH             $synopsys/share/man:$blcr_synopsys/man
+setenv             OMPI_MCA_plm_rsh_num_concurrent 960

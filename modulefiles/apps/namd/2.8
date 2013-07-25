@@ -1,0 +1,35 @@
+#%Module1.0
+#####################################################################
+##
+## NAMD 2.8
+##
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds NAMD to your environment"
+}
+
+module-whatis "
+        (Category_______) apps
+        (Name___________) namd
+        (Version________) 2.8
+        (Description_Fr_) NAMD est un programme parallèle de dynamique
+                          moléculaire à haute performance conçu pour la
+                          simulation de systèmes bio-moléculaires complexes
+        (Description_En_) NAMD is a parallel molecular dynamics code designed
+                          for high-performance simulation of large biomolecular
+                          systems
+        (Website________) http://www.ks.uiuc.edu/Research/namd/
+        (Authorship_____) Theoretical and Computational Biophysics Group
+        (Compiler_______) GCC 4.4.2
+        (Flags__________) -march=native -O3 -fexpensive-optimizations -ffast-math
+        (Dependencies___) GCC 4.4.2, OpenMPI 1.4.3, FFTW 2.1.5
+        (Notes_Fr_______) Cette version de NAMD utilise OpenMPI
+        (Notes_En_______) This version of NAMD uses OpenMPI
+"
+
+prereq                              compilers/gcc/4.4.2
+prereq                              mpi/openmpi/1.4.3_gcc
+prereq                              misc-libs/fftw/2.1.5_gcc_r1
+
+setenv          SYNOPSYS            /software/apps/namd/2.8
+prepend-path    PATH                $env(SYNOPSYS)

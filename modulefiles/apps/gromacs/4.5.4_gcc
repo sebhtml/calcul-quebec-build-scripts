@@ -1,0 +1,38 @@
+#%Module1.0
+#####################################################################
+##
+## GROMACS 4.5.4 (GCC)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds the GROMACS program and tools to your environment
+"
+}
+
+module-whatis "
+(Category_______) apps
+(Name___________) GROMACS
+(Version________) 4.5.4
+(Description_Fr_) GROMACS est une suite d’outils versatiles pour la dynamique
+                  moléculaire
+(Description_En_) GROMACS is a versatile package to perform molecular dynamics
+(Website________) http://www.gromacs.org/
+(Authorship_____) Originally University of Groningen; now various contributors
+(Compiler_______) GCC 4.4.2
+(Flags__________) CFLAGS=-march=core2 -O3 -ffast-math
+                  Configure flags:
+                  --with-fft=fftw3 --without-x --enable-shared --enable-mpi
+(Dependencies___) GCC 4.4.2, OpenMPI 1.4.3, FFTW 3.2.2
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           apps/gromacs
+prereq mpi/openmpi/1.4.3_gcc
+prereq misc-libs/fftw/3.2.2_gcc_r1
+setenv             SYNOPSYS          /software/apps/gromacs/4.5.4_gcc
+prepend-path       PATH              $env(SYNOPSYS)/bin
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include
+prepend-path       MANPATH           $env(SYNOPSYS)/share/man
+prepend-path       PKG_CONFIG_PATH   $env(SYNOPSYS)/lib/pkgconfig

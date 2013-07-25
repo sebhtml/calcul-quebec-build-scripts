@@ -1,0 +1,37 @@
+#%Module1.0
+#####################################################################
+##
+## OPARI2 1.0-rc1 (GCC)
+## 
+##
+proc ModulesHelp { } {
+        puts stderr "\tAdds OPARI2 to your environment  "
+}
+
+module-whatis "
+(Category_______) tools
+(Name___________) OPARI2
+(Version________) 1.0-rc1
+(Description_Fr_) OpenMP Pragma And Region Instrumentor (OPARI) 2 est un outil
+                  de modification de code qui automatise l’insertion d’appels à
+                  pomp, l’API de mesure de performances pour les programmes
+                  OpenMP écrits en C, C++ ou Fortran.
+(Description_En_) OpenMP Pragma And Region Instrumentor (OPARI) 2 is a
+                  source-to-source translation tool which automatically adds all
+                  necessary calls to the pomp runtime measurement library which
+                  allows to collect runtime performance data of Fortran, C or
+                  C++ OpenMP applications.
+(Website________) http://www2.fz-juelich.de/jsc/kojak/opari/
+(Authorship_____) Jülich Research Centre
+(Compiler_______) GCC 4.4.2
+(Flags__________) None
+(Dependencies___) GCC 4.4.2
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+conflict           tools/opari2
+prereq             compilers/gcc/4.4.2
+set                synopsys          /software/tools/opari2/1.0-rc1_gcc
+prepend-path       PATH              $synopsys/bin
+prepend-path       C_INCLUDE_PATH    $synopsys/include

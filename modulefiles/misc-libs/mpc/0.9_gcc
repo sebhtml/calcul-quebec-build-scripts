@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## MPC lib
+##
+##
+proc ModulesHelp { } {
+ puts stderr "\tAdds the mpc library to your environment "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) MPC
+(Version________) 0.9
+(Description_Fr_) La bibliothèqye MPC est une librairie en C pour les calculs à point flottant de précision multiple, avec arrondissage correct.
+(Description_En_) The MPC library is a C library for multiple-precision floating-point computations with correct rounding.
+(Website________) http://www.multiprecision.org/
+(Authorship_____) GNU
+(Compiler_______) gcc 4.4.2
+(Flags__________)
+(Dependencies___) gmp, mpfr
+(Notes_Fr_______)
+(Notes_En_______)
+"
+
+setenv SYNOPSYS /software/mpc-0.9_gcc
+prepend-path LD_LIBRARY_PATH $env(SYNOPSYS)/lib
+prepend-path C_INCLUDE_PATH $env(SYNOPSYS)/include

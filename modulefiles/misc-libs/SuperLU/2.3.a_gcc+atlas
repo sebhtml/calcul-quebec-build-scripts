@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## SuperLU lib 
+## 
+##
+proc ModulesHelp { } {
+	puts stderr "\tAdds the SuperLU library to your environment  "
+}
+
+module-whatis "
+(Category_______) misc-libs
+(Name___________) SuperLU
+(Version________) 2.3
+(Description_Fr_) SuperLU est une librairie générale pour la solution direct de systèmes larges, creux, et non-symétriques d'équations linéaires sur des machines 
+de haute performance.
+(Description_En_) SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations on high performance 
+machines.
+(Website________) http://crd.lbl.gov/~xiaoye/SuperLU/
+(Authorship_____) Sherry Li, Jim Demmel, John Gilbert, Laura Grigori, Meiyue Shao & al.
+(Compiler_______) gcc
+(Flags__________) 
+(Dependencies___) 
+(Notes_Fr_______) 
+(Notes_En_______) 
+"
+
+setenv             SYNOPSYS          /software/misc-libs/SuperLU_DIST-2.3_gcc
+prepend-path       LD_LIBRARY_PATH   $env(SYNOPSYS)/lib
+prepend-path       C_INCLUDE_PATH    $env(SYNOPSYS)/include

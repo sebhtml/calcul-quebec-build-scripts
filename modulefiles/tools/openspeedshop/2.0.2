@@ -1,0 +1,30 @@
+#%Module1.0
+#####################################################################
+##
+## Open|SpeedShop 2.0.2-u2
+## 
+##
+proc ModulesHelp { } { 
+    puts stderr "\tAdds Open|SpeedShop 2.0.2-u2 to your environment  "
+}
+
+module-whatis "(Category_______) tools"
+module-whatis "(Name___________) Open|SpeedShop"
+module-whatis "(Version________) 2.0.2-u2"
+module-whatis "(Description_Fr_) Open|SpeedShop est un projet multi-platform et open source servant à analyser les performances d'une application."
+module-whatis "(Description_En_) Open|SpeedShop is an open source multi platform Linux performance tool which is initially targeted to support performance analysis of applications running on both single node and large scale IA64, IA32, EM64T, AMD64, and IBM Power PC platforms."
+module-whatis "(Website________) http://www.openspeedshop.org/wp/"
+module-whatis "(Authorship_____) The Krell Institute"
+module-whatis "(Compiler_______) GCC 4.7.2"
+module-whatis "(Flags__________) "
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______) "
+module-whatis "(Notes_En_______) "
+
+set          SYNOPSYS          /software/tools/openspeedshop/2.0.2/
+prepend-path    PATH              $SYNOPSYS/bin
+prepend-path    LD_LIBRARY_PATH   $SYNOPSYS/lib64
+prepend-path    C_INCLUDE_PATH    $SYNOPSYS/include
+prepend-path    MANPATH           $SYNOPSYS/share/man
+
+
