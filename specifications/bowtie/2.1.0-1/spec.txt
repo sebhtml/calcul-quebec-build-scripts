@@ -1,0 +1,10 @@
+Group=apps
+Name=bowtie
+Version=2.1.0
+Release=1
+Source0=http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.1.0/bowtie2-2.1.0-source.zip
+BuildRequires=""
+Requires=""
+
+# see https://github.com/sebhtml/colosse-tools/tree/master/packager
+$ ~/git-clones/colosse-tools/packager/Packager.sh bowtie-2.1.0.txt 
