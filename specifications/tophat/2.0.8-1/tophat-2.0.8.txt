@@ -1,0 +1,13 @@
+Group=apps
+Name=tophat
+Version=2.0.8
+Release=1
+Source0=http://tophat.cbcb.umd.edu/downloads/tophat-2.0.8.tar.gz
+BuildRequires="misc-libs/boost/1.53.0-1 apps/samtools/0.1.19-1"
+Requires=""
+
+configureFlags="--with-bam=/software/apps/samtools/0.1.19-1 --with-boost=/software/misc-libs/boost/1.53.0-1/"
+
+# see https://github.com/sebhtml/colosse-tools/tree/master/packager
+
+$ ~/git-clones/colosse-tools/packager/Packager.sh tophat-2.0.8.txt                               
