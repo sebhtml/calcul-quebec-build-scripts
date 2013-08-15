@@ -1,0 +1,25 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	    puts stderr "\tAdds bowtie/1.0.0-1 to your environment  "
+}
+
+module-whatis "(Category_______) apps "
+module-whatis "(Name___________) bowtie"
+module-whatis "(Version________) 1.0.0-1"
+module-whatis "(Description_Fr_) Bowtie est un aligneur d'ADN super rapide"
+module-whatis "(Description_En_) Bowtie is an ultrafast, memory-efficient short read aligner. It aligns short DNA sequences (reads) to the human genome at a rate of over 25 million 35-bp reads per hour. Bowtie indexes the genome with a Burrows-Wheeler index to keep its memory footprint small: typically about 2.2 GB for the human genome (2.9 GB for paired-end).  "
+module-whatis "(Website________) http://bowtie-bio.sourceforge.net"
+module-whatis "(Authorship_____) Ben Langmead"
+module-whatis "(Compiler_______) "
+module-whatis "(Flags__________)"
+module-whatis "(Dependencies___)"
+module-whatis "(Notes_Fr_______)"
+module-whatis "(Notes_En_______)"
+
+
+module load compilers/gcc/4.8.0
+
+set                synopsys          /software/apps/bowtie/1.0.0-1
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
