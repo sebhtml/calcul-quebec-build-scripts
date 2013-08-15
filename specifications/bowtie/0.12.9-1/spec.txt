@@ -1,0 +1,10 @@
+Group=apps
+Name=bowtie
+Version=0.12.9
+Release=1
+Source0=http://sourceforge.net/projects/bowtie-bio/files/bowtie/0.12.9/bowtie-0.12.9-src.zip
+BuildRequires=""
+Requires=""
+
+# see https://github.com/sebhtml/colosse-tools/tree/master/packager
+~/git-clones/colosse-tools/packager/Packager.sh bowtie-0.12.9.txt
