@@ -1,0 +1,28 @@
+#%Module1.0
+#####################################################################
+##
+## mpiexec MPI lib
+##
+##
+proc ModulesHelp { } {
+       puts stderr "\tAdds the mpiexec MPI library to your environment  "
+}
+
+module-whatis "(Category_______) mpi"
+module-whatis "(Name___________) mpiexec"
+module-whatis "(Version________) 0.84"
+module-whatis "(Description_Fr_) Exécuter des apps MPI"
+module-whatis "(Description_En_) Kickstart MPI apps"
+module-whatis "(Website________) https://www.osc.edu/~djohnson/mpiexec/"
+module-whatis "(Authorship_____) Doug Johnson"
+module-whatis "(Compiler_______) Intel Composer XE 2013"
+module-whatis "(Flags__________) --prefix=prefix --with-default-comm=pmi"
+module-whatis "(Dependencies___) see below"
+module-whatis "(Notes_Fr_______) "
+module-whatis "(Notes_En_______) "
+
+set             synopsys          /software/mpi/osc-mpiexec/0.84-1
+prepend-path       PATH              $synopsys/bin
+prepend-path       MANPATH           $synopsys/share/man
+
+
